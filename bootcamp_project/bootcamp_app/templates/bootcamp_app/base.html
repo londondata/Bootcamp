@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOOTCAMP</title>
+</head>
+<body>
+	<h1> Welcome to BOOTCAMP</h1>
+	<h2>PREPARE TO STUDY</h2>
+
+<h2>Login</h2>
+	<div class="user-info">
+        {% if user.is_authenticated %}
+            Welcome, {{ user.username }}
+            <a href="{% url 'logout' %}">Signout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+
+<h2>Sign-Up</h2>
+	<a href="{% url 'signup' %}">Sign up</a>
+
+{% block content %}
+{% endblock%}
+<footer>About The BOOTCAMP Team</footer>
+
+</body>
+</html>
