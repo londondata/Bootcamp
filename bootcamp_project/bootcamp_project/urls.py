@@ -32,14 +32,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('bootcamp_app.urls')),
     url(r'^accounts/login/$', auth_views.login, name='login'),
-    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
+    url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^accounts/signup/$', bootcamp_views.signup, name= 'signup'),
 
 ]
 
-# urlpatterns = [
-#     url(r'^admin/', admin.site.urls),
-#     url(r'', include('tunr.urls')),
-#     url(r'^accounts/login/$', auth_views.login, name='login'),
-#     url(r'^accounts/logout/$', auth_views.logout, name='logout'),
-# ]
