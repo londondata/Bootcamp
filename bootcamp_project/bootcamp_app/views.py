@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
+from .forms import CharacterForm
+from .models import Character
 
 # Create your views here.
 
@@ -24,3 +26,21 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'bootcamp_app/signup.html', {'form': form})
+
+@login_required
+def character_create(request):
+    if request.method == 'POST':
+    	form = CharacterForm(request.POST)
+    	if form.is_valid():
+            character = form.save(commit=False)
+            character.user = request.user.profile
+            character = form.save()
+            return redirect('character_detail', pk=character.pk)
+    else:
+        form = CharacterForm()
+    return render(request,  'bootcamp_app/form.html', {'form': form})
+
+def character_detail(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
+

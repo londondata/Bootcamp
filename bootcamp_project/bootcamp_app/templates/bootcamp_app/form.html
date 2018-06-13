@@ -1,0 +1,10 @@
+{% extends 'bootcamp_app/base.html' %}
+
+{% block content %}
+    <h1>New Character</h1>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Enroll</button>
+    </form>
+{% endblock %}

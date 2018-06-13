@@ -6,4 +6,4 @@ class CharacterForm(forms.ModelForm):
 	class Meta:
 		model = Character
 		fields = ('name', 'age')
-		exclude = ('user')
+		exclude = ('profile',)
