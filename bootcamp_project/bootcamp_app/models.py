@@ -24,7 +24,15 @@ class Character(models.Model):
 	profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
 
 
+class Quiz(models.Model):
+	question = models.CharField(max_length=500)
+	answer = models.Boolean()
+	difficulty = models.CharField(max_length=100)
 
+class Final(models.Model):
+	question = models.CharField(max_length=500)
+	answer = models.Boolean()
+	difficulty = models.CharField(max_length=100)
 
 
 # Save User Profile on User create or save
@@ -35,4 +43,4 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()	
+    instance.profile.save()
