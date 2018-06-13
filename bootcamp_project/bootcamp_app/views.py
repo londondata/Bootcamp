@@ -8,9 +8,9 @@ from .models import Character
 
 # Create your views here.
 
+
 def home(request):
 	return render(request, 'bootcamp_app/base.html')
-
 
 # sign up view
 def signup(request):
@@ -27,6 +27,31 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'bootcamp_app/signup.html', {'form': form})
 
+def character_detail(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
+
+#GAME DAYS 
+def day1(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/day1.html', {'character': character })
+
+def day2(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/day2.html', {'character': character })
+
+def day3(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/day3.html', {'character': character })
+
+def day4(request, pk):
+	character = Character.objects.get(id=pk)
+	return render(request, 'bootcamp_app/day4.html', {'character': character })
+
+
+
+
+
 @login_required
 def character_create(request):
     if request.method == 'POST':
@@ -39,8 +64,3 @@ def character_create(request):
     else:
         form = CharacterForm()
     return render(request,  'bootcamp_app/form.html', {'form': form})
-
-def character_detail(request, pk):
-	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
-

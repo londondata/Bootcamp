@@ -6,6 +6,6 @@
     {{ character.name }}
     {{ character.age }}
 
-    <button type="default" class="save btn btn-default"><a href="#">Begin BOOTCAMP</a></button>
+    <button type="default" class="save btn btn-default"><a href="{% url 'day1' pk=character.id %}">Begin BOOTCAMP</a></button>
 
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'bootcamp_app/game.html' %}
+
+{% block content %}
+
+<h1>Welcome to Day 1</h1>
+
+<p>You arrive fresh and ready to learn! You're so excited!</p>
+
+<p>You meet your instructor, Professor B. Slime. He has a mighty booming voice and says he will whip you into shape so you learn Python and Django! </p>
+
+<p>You are upbeat and learn a lot of knowledge for the day, and you go home with a spring in your step.</p>
+
+<div>
+	<button><a href="{% url 'day2' pk=character.id %}">Go to the next day</a></button>
+</div>
+
+{% endblock %}
