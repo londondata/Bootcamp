@@ -25,8 +25,6 @@ class Character(models.Model):
 
 
 
-
-
 # Save User Profile on User create or save
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
