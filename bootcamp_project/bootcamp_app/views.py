@@ -3,11 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
+from rest_framework import generics
 from .forms import CharacterForm
 from .models import Character
 
-# Create your views here.
+from .serializers import CharacterSerializer
 
+# Create your views here.
 
 def home(request):
 	return render(request, 'bootcamp_app/base.html')
@@ -30,8 +32,19 @@ def signup(request):
 def character_detail(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
+#
+# STAT CHANGING API
+# first one create
+# class CharacterList(generics.ListCreateAPIView):
+#     queryset = Character.objects.all()
+#     serializer_class = CharacterSerializer
 
-#GAME DAYS 
+class UpdateStats (generics.RetrieveUpdateDestroyAPIView):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+
+
+#GAME DAYS
 def day1(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day1.html', {'character': character })
@@ -47,9 +60,6 @@ def day3(request, pk):
 def day4(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day4.html', {'character': character })
-
-
-
 
 
 @login_required

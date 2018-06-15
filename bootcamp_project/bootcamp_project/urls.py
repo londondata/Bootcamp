@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls import include, url
 from django.contrib.auth import views as auth_views
 from bootcamp_app import views as bootcamp_views
@@ -31,9 +31,10 @@ from bootcamp_app import views as bootcamp_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('bootcamp_app.urls')),
+    url(r'', include('bootcamp_app/api.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^accounts/signup/$', bootcamp_views.signup, name= 'signup'),
 
 ]
-
