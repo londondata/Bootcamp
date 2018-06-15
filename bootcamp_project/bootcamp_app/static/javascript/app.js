@@ -1,2 +1,3 @@
-
-console.log("app.js is loading");
+$(document).ready(() => {
+  console.log('app.js loaded!');
+})
