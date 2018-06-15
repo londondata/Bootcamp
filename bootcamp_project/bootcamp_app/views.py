@@ -3,7 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.decorators import api_view
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .forms import CharacterForm
 from .models import Character
 from .serializers import CharacterSerializer
@@ -31,18 +34,6 @@ def signup(request):
 def character_detail(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
-#
-# STAT CHANGING API
-# first one create
-# class CharacterList(generics.ListCreateAPIView):
-#     queryset = Character.objects.all()
-#     serializer_class = CharacterSerializer
-
-class UpdateStats (generics.RetrieveUpdateDestroyAPIView):
-    queryset = Character.objects.all()
-    serializer_class = CharacterSerializer
-
-	# def update(self, request, pk=None):
 
 
 #GAME DAYS
@@ -78,3 +69,19 @@ def character_create(request):
     else:
         form = CharacterForm()
     return render(request,  'bootcamp_app/form.html', {'form': form})
+
+class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+
+    def put(request, pk):
+        character = Character.objects.get(id=pk)
+        serializer = CharacterSerializer(character, data = request.data)
+        if serializer.is_valid():
+            character.energy = Int(data.energy)
+            character.mood = Int(data.mood)
+            character.knowledge = Int(data.knowledge)
+            character.save()
+            return redirect('day2', pk=character.pk)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
