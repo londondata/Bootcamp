@@ -4,7 +4,7 @@
 <!-- 
 if went out: -->
 
-	{% if  %}
+	{% if (went out) %}
 
 	You drank way too much and stayed out longer than you expected. You can barely concentrate on coding today and almost fall asleep.
 
@@ -13,14 +13,16 @@ if went out: -->
 <!-- 
 if stayed in: -->
 
-	<div class="user-info">
-        {% if user.is_authenticated %}
-            Welcome, {{ user.username }}
-            <a href="{% url 'character_create' %}">Create Character</a>
-            <a href="{% url 'logout' %}">Logout</a>
-        {% endif %}
+	
+    {% if stayed in %}
+
+    Your studying pays off with your coding knowledge, but you fall into a deep depression over missing saying goodbye to your best friend and suffer a permanent drop in your mood.
 
 
+
+    {% endif %}
+
+<p> Hello. This is Day four!</p>
 
 <div>
   <button><a href="{% url 'day5' pk=character.id %}">Go to the next day</a></button>

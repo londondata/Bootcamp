@@ -1,8 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls import url, include
+from rest_framework import routers
 from . import views
+from django.conf.urls.static import static
 
 urlpatterns =[
 	path('', views.home, name='home'),
+
+	# url(r'characters/$', views.UpdateStats.as_view()),
+	url(r'characters/(?P<pk>[0-9]+)/$', views.UpdateStats.as_view()),
+
 	path('character/new', views.character_create, name="character_create"),
 	path('character/<int:pk>', views.character_detail, name="character_detail"),
 	path('game/day1/<int:pk>', views.day1, name="day1"),
