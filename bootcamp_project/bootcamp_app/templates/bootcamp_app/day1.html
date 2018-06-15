@@ -10,20 +10,17 @@
 
 <p>You are upbeat and learn a lot of knowledge for the day, and you go home with a spring in your step.</p>
 
-<div class="stat-box">
-	<p>Your daily status:</p>
-	<ul>
-		{% for status in stats %}
-		<li>
-			{{status}}
-		</li>
-		{% endfor %}
-	</ul>
-</div>
 
 
 <div>
-	<button><a href="{% url 'day2' pk=character.id %}">Go to the next day</a></button>
+		<button id="work"
+		data-stats = "{'energy': -5, 'mood': -5, 'knowledge': 10}"
+		 data-energy="-5" data-mood="-5" data-knowledge="10">
+			<!-- <a href="{% url 'day2' pk=character.id %}"> -->
+				Go to the next day
+			<!-- </a> -->
+		</button>
+
 </div>
 
 {% endblock %}

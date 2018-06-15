@@ -34,6 +34,6 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^accounts/signup/$', bootcamp_views.signup, name= 'signup'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 ]
-

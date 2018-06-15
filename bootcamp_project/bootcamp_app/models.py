@@ -69,7 +69,6 @@ class Character(models.Model):
 	def __str(self):
 		return self.name
 
-
 class Quiz(models.Model):
 	question = models.CharField(max_length=500)
 	answer = models.BooleanField()
