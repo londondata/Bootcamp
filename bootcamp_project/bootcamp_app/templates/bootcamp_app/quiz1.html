@@ -1,0 +1,15 @@
+{% extends 'bootcamp_app/game.html' %}
+{% block content %}
+
+<form>
+<p> Your friend is moving away....</p>
+<input type="submit" value="Go Out">
+<input type="submit" value="Stay ">
+
+</form>
+
+<div>
+  <button><a href="{% url 'day4' pk=character.id %}">Go to the next day</a></button>
+</div>
+
+{% endblock %}

@@ -3,12 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
+from rest_framework import generics
 from .forms import CharacterForm
 from .models import Character
-import pickle
+from .serializers import CharacterSerializer
 
 # Create your views here.
-
 
 def home(request):
 	return render(request, 'bootcamp_app/base.html')
@@ -31,6 +31,19 @@ def signup(request):
 def character_detail(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
+#
+# STAT CHANGING API
+# first one create
+# class CharacterList(generics.ListCreateAPIView):
+#     queryset = Character.objects.all()
+#     serializer_class = CharacterSerializer
+
+class UpdateStats (generics.RetrieveUpdateDestroyAPIView):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+
+	# def update(self, request, pk=None):
+
 
 #GAME DAYS
 def day1(request, pk):
@@ -52,28 +65,6 @@ def day4(request, pk):
 def day5(request, pk):
     character = Character.objects.get(id=pk)
     return render(request, 'bootcamp_app/day5.html', {'character': character })
-
-def day6(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day6.html', {'character': character })
-
-def day7(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day7.html', {'character': character })
-
-def day8(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day8.html', {'character': character })
-
-def day9(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day9.html', {'character': character })
-
-def day10(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day10.html', {'character': character })
-
-
 
 @login_required
 def character_create(request):

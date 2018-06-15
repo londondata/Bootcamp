@@ -4,14 +4,13 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-
 # Create your models here.
+
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
 	def __str__(self):
 		return self.user.username
-
 
 class Character(models.Model):
     name = models.CharField(max_length=100, help_text="enter your Character Name - choose wisely!")
@@ -65,11 +64,6 @@ class Character(models.Model):
         self.statuses.append(self.mood_status())
         self.statuses.append(self.knowledge_status())
         return self.statuses
-
-
-    def __str(self):
-        return self.name
-
 
 
 # Save User Profile on User create or save

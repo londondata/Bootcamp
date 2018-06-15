@@ -1,6 +1,26 @@
 {% extends 'bootcamp_app/game.html' %}
 
 {% block content %}
+<!-- 
+if went out: -->
+
+	{% if (went out) %}
+
+	You drank way too much and stayed out longer than you expected. You can barely concentrate on coding today and almost fall asleep.
+
+	
+	{% endif %}
+<!-- 
+if stayed in: -->
+
+	
+    {% if stayed in %}
+
+    Your studying pays off with your coding knowledge, but you fall into a deep depression over missing saying goodbye to your best friend and suffer a permanent drop in your mood.
+
+
+
+    {% endif %}
 
 <p> Hello. This is Day four!</p>
 
