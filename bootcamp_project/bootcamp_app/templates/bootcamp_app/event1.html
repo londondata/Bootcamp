@@ -1,0 +1,33 @@
+{% extends 'bootcamp_app/base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+
+<form action="/create_post/" method="POST" id="event1-form">
+<p> Your friend is moving away....</p>
+<input type="submit" value="Go Out">
+<input type="submit" value="Stay ">
+
+</form>
+
+<div>
+  <button><a href="{% url 'day4' pk=character.id %}">Go to the next day</a></button>
+</div>
+
+{% endblock %}
+
+<!DOCTYPE html>
+<head>
+    <title>Index page</title>
+</head>
+<body>
+    <div id="header">Welcome to index page</div>
+    <div id="content">
+        <p>Enter your name</p>
+        <form action="/result/" method="post" accept-charset="utf-8">{% csrf_token %}
+            <input type="text" name="answer">
+            <input type="submit" value="Send!">
+        </form>
+    </div>
+</body>
+{% endblock %}
