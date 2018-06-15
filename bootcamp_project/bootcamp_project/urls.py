@@ -31,7 +31,6 @@ from bootcamp_app import views as bootcamp_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('bootcamp_app.urls')),
-    url(r'', include('bootcamp_app/api.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),

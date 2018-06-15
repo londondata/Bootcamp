@@ -6,7 +6,6 @@ from django.contrib.auth import login, authenticate
 from rest_framework import generics
 from .forms import CharacterForm
 from .models import Character
-
 from .serializers import CharacterSerializer
 
 # Create your views here.
@@ -42,6 +41,8 @@ def character_detail(request, pk):
 class UpdateStats (generics.RetrieveUpdateDestroyAPIView):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+
+	# def update(self, request, pk=None):
 
 
 #GAME DAYS

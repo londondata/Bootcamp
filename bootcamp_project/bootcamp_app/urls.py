@@ -6,7 +6,7 @@ from . import views
 urlpatterns =[
 	path('', views.home, name='home'),
 
-	url(r'characters/$', views.UpdateStats.as_view()),
+	# url(r'characters/$', views.UpdateStats.as_view()),
 	url(r'characters/(?P<pk>[0-9]+)/$', views.UpdateStats.as_view()),
 
 	path('character/new', views.character_create, name="character_create"),
