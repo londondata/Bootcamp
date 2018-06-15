@@ -12,12 +12,12 @@ class Profile(models.Model):
 		return self.user.username
 
 class Character(models.Model):
-    name = models.CharField(max_length=100, help_text="enter your Character Name - choose wisely!")
-    age = models.IntegerField(max_length=5)
-    energy = models.IntegerField(default = 100)
-    mood = models.IntegerField(default = 100)
-    knowledge = models.IntegerField(default = 0)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
+	name = models.CharField(max_length=100, help_text="enter your Character Name - choose wisely!")
+	age = models.IntegerField(max_length=5)
+	energy = models.IntegerField(default = 100)
+	mood = models.IntegerField(default = 100)
+	knowledge = models.IntegerField(default = 0)
+	profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
 
 	# Model vars to return
 	es = ''
@@ -87,9 +87,9 @@ class Final(models.Model):
 # Save User Profile on User create or save
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+	if created:
+		Profile.objects.create(user=instance)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+	instance.profile.save()
