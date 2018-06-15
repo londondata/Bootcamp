@@ -93,4 +93,3 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 			return redirect('day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> master
