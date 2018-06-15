@@ -29,12 +29,18 @@ def signup(request):
 
 def character_detail(request, pk):
 	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
+	return render(request, 'bootcamp_app/character_detail.html', {'character': character})
 
-#GAME DAYS 
+#GAME DAYS
 def day1(request, pk):
 	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/day1.html', {'character': character })
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+
+	return render(request, 'bootcamp_app/day1.html', context)
 
 def day2(request, pk):
 	character = Character.objects.get(id=pk)
