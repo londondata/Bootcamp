@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-
 # Create your models here.
 
 class Profile(models.Model):
@@ -12,14 +11,13 @@ class Profile(models.Model):
 	def __str__(self):
 		return self.user.username
 
-
 class Character(models.Model):
-	name = models.CharField(max_length=100, help_text="enter your Character Name - choose wisely!")
-	age = models.IntegerField(max_length=5)
-	energy = models.IntegerField(default = 100)
-	mood = models.IntegerField(default = 100)
-	knowledge = models.IntegerField(default = 0)
-	profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
+    name = models.CharField(max_length=100, help_text="enter your Character Name - choose wisely!")
+    age = models.IntegerField(max_length=5)
+    energy = models.IntegerField(default = 100)
+    mood = models.IntegerField(default = 100)
+    knowledge = models.IntegerField(default = 0)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
 
 	# Model vars to return
 	es = ''

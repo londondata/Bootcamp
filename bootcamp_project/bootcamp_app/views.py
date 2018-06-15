@@ -13,7 +13,6 @@ from .serializers import CharacterSerializer
 
 # Create your views here.
 
-
 def home(request):
 	return render(request, 'bootcamp_app/base.html')
 
@@ -59,6 +58,10 @@ def day4(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day4.html', {'character': character })
 
+def day5(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day5.html', {'character': character })
+
 
 @login_required
 def character_create(request):
@@ -90,3 +93,4 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 			return redirect('day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+>>>>>>> master
