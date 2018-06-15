@@ -79,6 +79,7 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 
 	def put(request, pk):
 		character = Character.objects.get(id=pk)
+		day = 1
 
 		serializer = CharacterSerializer(character, data = request.DATA)
 		if serializer.is_valid():
