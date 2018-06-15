@@ -53,6 +53,10 @@ def day4(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day4.html', {'character': character })
 
+def day5(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day5.html', {'character': character })
+
 @login_required
 def character_create(request):
     if request.method == 'POST':
