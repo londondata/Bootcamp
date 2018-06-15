@@ -12,6 +12,19 @@
 
 {% endblock%}
 
-<footer> STATS GO HERE </footer>
+<footer> STATS GO HERE
+	<div class="stat-box">
+		{% for status in character.statuses.stats %}
+			<p>
+				{{ status }}
+			</p>
+		{% endfor %}
+	</div>
+</footer>
 </body>
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous" defer></script>
+<script src="/static/scripts/app.js" defer></script>
 </html>
