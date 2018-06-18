@@ -19,15 +19,17 @@
 	<link rel="stylesheet" href="{% static 'scripts/app.js' %}">
 	<title>BOOTCAMP - The Game</title>
 </head>
-<body>
-<div class="bgimage">
+<body class="bgimage" style="background-image: url('{% static "images/BOOTCAMPUI.jpg" %}')";>
+<div >
 
+<div class="block-content">
 {% block content %}
 
 {% endblock%}
 </div>
+</div>
 
-<footer> 
+<footer>
 	<div class="stat-box">
 	<ul>
 		{% for status in stats %}
