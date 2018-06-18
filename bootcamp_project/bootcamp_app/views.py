@@ -134,7 +134,7 @@ def day5(request, pk):
 	}
 	return render(request, 'bootcamp_app/day5.html', context)
 
-# This is hardcoded for now
+# Quiz questions are hardcoded for now
 def quiz1true(request, pk):
 	energy = -5
 	mood = 10
@@ -237,6 +237,37 @@ def day7(request, pk):
 	}
 	return render(request, 'bootcamp_app/day7.html', context)
 
+# Quiz questions are hardcoded for now
+def quiz2true(request, pk):
+	energy = -5
+	mood = -10
+	knowledge = 0
+	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.quiz2 = "fail"
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/quiz2.html', pk=character.id)
+
+def quiz2false(request, pk):
+	energy = -5
+	mood = 10
+	knowledge = 10
+	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.quiz2 = "success"
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/quiz2.html', pk=character.id)
+
 def day8(request, pk):
 	character = Character.objects.get(id=pk)
 	stats = character.user_stats()
@@ -247,7 +278,11 @@ def day8(request, pk):
 	return render(request, 'bootcamp_app/day8.html', context)
 
 def day9(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 5
 	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
 	stats = character.user_stats()
 	context = {
 		'character': character,

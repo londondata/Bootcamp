@@ -31,13 +31,17 @@
   </pre>
 
 
-  <a href="{% url 'quiz1true' pk=character.id %}"></a><button id="continue" class="continue-button">
-    True.
-  </button></a>
+  <a href="{% url 'quiz1true' pk=character.id %}">
+    <button id="continue" class="continue-button">
+      True.
+    </button>
+  </a>
 
-  <a href="{% url 'quiz1false' pk=character.id %}"></a><button id="continue" class="continue-button">
-    False.
-  </button></a>
+  <a href="{% url 'quiz1false' pk=character.id %}">
+    <button id="continue" class="continue-button">
+      False.
+    </button>
+  </a>
   <!-- <h5>{{quiz.question}}</h5>
 
   {% if quiz.answer == false %}

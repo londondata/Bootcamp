@@ -12,7 +12,7 @@
 </p>
 
 <p>
-  Professor Blueslime outlines his schedule for the day. He will spend the entire morning reviewing Python, and the afternoon reviewing Django. When he writes out the topic list on the whiteboard wall, you're amazed at how much the class covered. "Any of this knowledge might be on the exam!" he says, while looking directly at you.
+  Professor Blueslime outlines his schedule for the day. He will spend the entire morning reviewing Python, and the afternoon reviewing Django. When he writes out the topic list on the whiteboard wall, you're amazed at how much the class covered. "Any of this knowledge might be on the exam!" he says sternly, while looking directly at you.
 </p>
 
 <p>
@@ -22,7 +22,12 @@
   Do you choose to interrupt Professor Blueslime so you can take a snack break, or do you choose to skip break to hear Professor Blueslime's test review?
 </p>
 
-<form id="choice6" class="game-form">
+<a href="{% url 'choice6' pk=character.id %}">
+  <button>
+    Interrupt Professor Blueslime and remind him that we have a break scheduled. I need potato chips and coffee!
+  </button>
+</a>
+<!-- <form id="choice6" class="game-form">
   {% csrf_token %}
   <input type="hidden" name="id" value="{{character.id}}" />
   <input type="hidden" name="choice" value="6" />
@@ -47,6 +52,12 @@
   <button type="submit" id="continue" class="continue-button">
     I really want to hear Professor Blueslime review this material even though my stomach's growling.
   </button>
-</form>
+</form> -->
+
+<a href="{% url 'choice7' pk=character.id %}">
+  <button>
+    I really want to hear Professor Blueslime review this material even though my stomach's growling and I can't concentrate.
+  </button>
+</a>
 
 {% endblock %}

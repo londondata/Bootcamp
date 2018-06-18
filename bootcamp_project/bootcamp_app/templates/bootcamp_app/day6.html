@@ -36,9 +36,11 @@
   </button>
 </form> -->
 
-<a href="{% url 'choice3' pk=character.id %}"></a><button id="continue" class="continue-button">
-  Keep on debugging the update feature
-</button></a>
+<a href="{% url 'choice3' pk=character.id %}">
+  <button id="continue" class="continue-button">
+    Keep on debugging the update feature
+  </button>
+</a>
 {% endif %}
 
 {% if character.knowledge < 40 %}
@@ -54,9 +56,11 @@
     Keep on debugging the update feature.
   </button>
 </form> -->
-<a href="{% url 'choice4' pk=character.id %}"></a><button id="continue" class="continue-button">
-  Keep on debugging the update feature
-</button></a>
+<a href="{% url 'choice4' pk=character.id %}">
+  <button id="continue" class="continue-button">
+    Keep on debugging the update feature
+  </button>
+</a>
 {% endif %}
 
 <!-- <form id="choice5" class="game-form">
@@ -72,8 +76,10 @@
   </button>
 </form> -->
 
-<a href="{% url 'choice5' pk=character.id %}"></a><button id="continue" class="continue-button">
-  I'm going to work on adding some basic CSS so the page isn't fugly, then see where I'm at.
-</button></a>
+<a href="{% url 'choice5' pk=character.id %}">
+  <button id="continue" class="continue-button">
+    I'm going to work on adding some basic CSS so the page isn't fugly, then see where I'm at.
+  </button>
+</a>
 
 {% endblock %}

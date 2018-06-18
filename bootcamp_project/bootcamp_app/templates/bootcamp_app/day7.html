@@ -2,14 +2,14 @@
 <h1>Welcome to Day 7, {{character.name}}</h1>
 
 <p>
-  Now that Professor Blueslime covered full CRUD, he sets you to work practicing with another CRUD-based lab so that you can get these techniques down. You spend all morning and the early afternoon working on Foodr (or is it Foodly?).
+  Now that Professor Blueslime covered full CRUD, he sets you to work practicing with another CRUD-based lab so that you can get more practice. You spend all morning and the early afternoon working on Foodr (or is it Foodly?).
 </p>
 
 <p>
   You come back from your afternoon break, and .....
 </p>
 
-<h2>O NOES! A POP QUIZ!</h4>
+<h4>O NOES! A POP QUIZ!</h4>
 
 <p>
   Say what?!
@@ -23,7 +23,20 @@
   "Answer this question right now!"
 </p>
 
-  <h5>{{quiz.question}}</h5>
+<h5>When you use <code>django-admin</code> to start a project, it creates a project folder inside of the app folder. This project folder contains the <code>views.py</code> and <code>models.py</code> files.</h5>
+
+<a href="{% url 'quiz2true' pk=character.id %}">
+  <button id="continue" class="continue-button">
+    True.
+  </button></a>
+
+<a href="{% url 'quiz2false' pk=character.id %}">
+  <button id="continue" class="continue-button">
+    False.
+  </button>
+</a>
+
+  <!-- <h5>{{quiz.question}}</h5>
 
   {% if quiz.answer == false %}
 
@@ -80,7 +93,7 @@
 		  <button type="submit" id="continue" class="continue-button">
 				This question is false.
 		  </button>
-		</form>
+		</form> -->
 
     {% endif %}
 

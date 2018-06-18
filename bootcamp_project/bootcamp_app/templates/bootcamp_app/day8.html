@@ -14,7 +14,7 @@
   You can't believe BOOTCAMP is almost over. Will you pass?
 </p>
 
-<div>
+<!-- <div>
 	<form id="day8">
 		{% csrf_token %}
 		<input type="hidden" name="id" value="{{character.id}}" />
@@ -26,8 +26,12 @@
 					Go to the last day.
 			</button>
 	</form>
+ -->
 
-
-{{ data }}
+<a href="{% url 'day9' pk=character.id %}">
+	<button>
+		Go to Day 9. (And one day closer to the final!)
+	</button>
+</a>
 
 {% endblock %}
