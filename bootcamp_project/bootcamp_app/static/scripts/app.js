@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-console.log('yeah...');
+console.log('app.js is loaded');
 
   $('#work').on('click', function(){
     console.log('please work');
@@ -14,3 +14,12 @@ console.log('yeah...');
     console.log(stats);
   })
 })
+
+
+
+$(document).ready( function() {
+
+    $(".event-btn").click( function(event) {
+        alert("You made your decision...");
+    });
+});

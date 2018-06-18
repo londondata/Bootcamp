@@ -2,8 +2,32 @@ $(document).ready(() => {
   console.log('app.js loaded!');
 })
 
-$('#event1-form').on('submit', function(event){
-    event.preventDefault();
-    console.log("you made your decision.")  // sanity check
-    create_post();
+
+// get cookies when using csrf tokens
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+
+
+
+
+// alert messege when submitting event answer
+
+$('#event-button').on('click', function() {
+     console.log("Hi");
 });

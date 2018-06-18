@@ -9,13 +9,19 @@
 <title>BOOTCAMP</title>
 
 {% load static %}
- <!-- add js file -->
-  <!-- <script src="{% static 'app.js' %}"></script> -->
-  <script src="static/scripts/app.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-		<link rel="stylesheet" href="{% static 'css/main.css' %}">
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- add css file  -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+ <!-- add js files -->
+		<!-- jQuery  -->
+
+	 <script
+	 src="https://code.jquery.com/jquery-3.3.1.js"
+	 integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	 crossorigin="anonymous" defer></script>
+	 <script src="/static/scripts/app.js" defer=></script>
+
 
 		   {% block extra_js %}{% endblock extra_js %}
 </head>
