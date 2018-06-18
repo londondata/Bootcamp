@@ -1,7 +1,8 @@
 
-{
+/*{
   box-sizing: border-box;
-}
+}*/
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -81,12 +82,6 @@ h6 {
 }*/
 
 /* Login Form CSS */
-.moveCenter2 {
-    /*position: absolute;*/
-    /*left: 30%;*/
-    right: 35%;
-    width: 10%;
-}
 
 .btn-red2 {
 	  background-color: #f3252a;
@@ -133,6 +128,35 @@ h6 {
     right: 55%;
 }
 /*-----------------------*/
+
+/*--New Character Page--*/
+
+#newCharTitle {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.charNameAge {
+    margin-left: 40%;
+}
+
+/*--Character Information Page--*/
+
+#characterInfo {
+    text-align: center;
+    margin-bottom: .75em;
+}
+
+.savedCharNameAge {
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+#beginBootBtn {
+    margin-left: 45%;
+}
+
+/*-------------------*/
 
 .about a {
     color: #f3252a;

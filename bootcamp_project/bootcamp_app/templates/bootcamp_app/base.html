@@ -22,6 +22,12 @@
 			<a href="{% url 'login' %}">Log In</a>
 			<a href="{% url 'signup' %}">Sign Up</a>
 			{% endif %}
+			{% if user.is_authenticated %}
+					<div class="login-form">
+					<a href="{% url 'character_create' %}">Create Character</a>
+					<a href="{% url 'logout' %}">Logout</a>
+				</div>
+			{% endif %}
 		</nav>
 	</div>
 
@@ -34,16 +40,16 @@
 	<div class="user-info">
         {% if user.is_authenticated %}
             Welcome, {{ user.username }}
-						<div class="login-form">
+						<!-- <div class="login-form">
             <a href="{% url 'character_create' %}">Create Character</a>
             <a href="{% url 'logout' %}">Logout</a>
-					</div>
+					</div> -->
         {% endif %}
     </div>
 <title>BOOTCAMP</title>
 
 </head>
-<body>
+</body>
     <!-- <h1> Welcome to BOOTCAMP</h1>
     <h2>PREPARE TO STUDY</h2>
 

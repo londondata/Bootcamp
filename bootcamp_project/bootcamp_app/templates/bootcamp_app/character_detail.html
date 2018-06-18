@@ -2,17 +2,21 @@
 
 {% block content %}
 
-    <h1>Character Info</h1>
+    <h1 id="characterInfo">Character Information</h1>
 
-      {{ character.name }}
-      {{ character.age }}
+      <div class="savedCharNameAge">
+        <h3 class="nameAge">
+          {{ character.name }}
+          {{ character.age }}
+        </h3>
+      </div>
 
-    <h1>Character Information</h1>
-
-    <a href="{% url 'day1' pk=character.id %}">
-      <button type="default" class="save btn btn-default">
+      <div id="beginBootBtn"
+        <a href="{% url 'day1' pk=character.id %}">
+        <button type="submit" class="btn btn-primary btn-md btn-red2">
         Begin BOOTCAMP
-      </button>
-    </a>
+        </button>
+        </a>
+      </div>
 
 {% endblock %}
