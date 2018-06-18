@@ -386,7 +386,7 @@ def finals1(request, pk):
 
 def finals1true(request, pk):
 	character = Character.objects.get(id=pk)
-	character.finals_count = 1
+	character.finals_count += 1
 	character.save()
 	return redirect('finals2', pk=character.id)
 
@@ -410,7 +410,7 @@ def finals2true(request, pk):
 
 def finals2false(request, pk):
 	character = Character.objects.get(id=pk)
-	character.finals_count = 2
+	character.finals_count += 1
 	character.save()
 	return redirect('finals3', pk=character.id)
 
@@ -444,6 +444,8 @@ def finalsoutcome(request, pk):
 
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
+	character.knowledge += (character.finals_count * 10)
+	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,

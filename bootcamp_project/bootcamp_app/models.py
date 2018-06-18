@@ -24,7 +24,7 @@ class Character(models.Model):
 	event3 = models.IntegerField(null = True, blank = True)
 	quiz1 = models.CharField(max_length=100, null = True, blank = True)
 	quiz2 = models.CharField(max_length=100, null = True, blank = True)
-	finals_count = models.IntegerField(null = True, blank = True)
+	finals_count = models.IntegerField(default = 0, null = True, blank = True)
 
 
 	# Model vars to return
