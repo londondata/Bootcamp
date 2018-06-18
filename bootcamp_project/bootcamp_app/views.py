@@ -384,6 +384,17 @@ def finals1(request, pk):
 	}
 	return render(request, 'bootcamp_app/finals1.html', context)
 
+def finals1true(request, pk):
+	character = Character.objects.get(id=pk)
+	character.finals_count = 1
+	character.save()
+	return redirect('finals2', pk=character.id)
+
+def finals1false(request, pk):
+	character = Character.objects.get(id=pk)
+	return redirect('finals2', pk=character.id)
+
+
 def finals2(request, pk):
 	character = Character.objects.get(id=pk)
 	stats = character.user_stats()
@@ -392,6 +403,16 @@ def finals2(request, pk):
 		'stats': stats
 	}
 	return render(request, 'bootcamp_app/finals2.html', context)
+
+def finals2true(request, pk):
+	character = Character.objects.get(id=pk)
+	return redirect('finals3', pk=character.id)
+
+def finals2false(request, pk):
+	character = Character.objects.get(id=pk)
+	character.finals_count = 2
+	character.save()
+	return redirect('finals3', pk=character.id)
 
 def finals3(request, pk):
 	character = Character.objects.get(id=pk)
@@ -402,6 +423,16 @@ def finals3(request, pk):
 	}
 	return render(request, 'bootcamp_app/finals3.html', context)
 
+def finals3true(request, pk):
+	character = Character.objects.get(id=pk)
+	return redirect('finalsoutcome', pk=character.id)
+
+def finals3false(request, pk):
+	character = Character.objects.get(id=pk)
+	character.finals_count += 1
+	character.save()
+	return redirect('finalsoutcome', pk=character.id)
+
 def finalsoutcome(request, pk):
 	character = Character.objects.get(id=pk)
 	stats = character.user_stats()
@@ -410,45 +441,6 @@ def finalsoutcome(request, pk):
 		'stats': stats
 	}
 	return render(request, 'bootcamp_app/finalsoutcome.html', context)
-
-
-def finals1true(request, pk):
-	character = Character.objects.get(id=pk)
-	character.finals_count = 1
-	character.save()
-	stats = character.user_stats()
-	context = {
-		'character': character,
-		'stats': stats
-	}
-	return redirect('finals2', pk=character.id)
-
-def finals1false(request, pk):
-	character = Character.objects.get(id=pk)
-	context = {
-		'character': character,
-		'stats': stats
-	}
-	return redirect('finals2', pk=character.id)
-
-def finals2true(request, pk):
-	character = Character.objects.get(id=pk)
-	character.finals_count = 1
-	character.save()
-	stats = character.user_stats()
-	context = {
-		'character': character,
-		'stats': stats
-	}
-	return redirect('finals3', pk=character.id)
-
-def finals2false(request, pk):
-	character = Character.objects.get(id=pk)
-	context = {
-		'character': character,
-		'stats': stats
-	}
-	return redirect('finals3', pk=character.id)
 
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)

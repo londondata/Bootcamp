@@ -4,12 +4,21 @@
     <h1>Final Exam: Question 3</h1>
 
 
-    <h2></h2>
+    <h2>In the Django template:</h2>
+    <ul>
+      <li>
+        A variable is wrapped in <code>{% templatetag openbrace %}%  %{% templatetag closebrace %}</code> and outputs a value from the context.
+      </li>
+      <li>
+        A tag is wrapped in <code>{%templatetag openvariable %}  {% templatetag closevariable %}</code> and provides arbitrary in the rendering process.
+      </li>
+    </ul>
 
     <a href="{% url 'finals3true' pk=character.id %}">
       <button id="continue" class="continue-button">
         True.
-      </button></a>
+      </button>
+    </a>
 
     <a href="{% url 'finals3false' pk=character.id %}">
       <button id="continue" class="continue-button">
