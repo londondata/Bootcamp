@@ -1,6 +1,7 @@
-body {
-	background-image: url("/bootcamp_app/static/images/BOOTCAMPUI.jpg");
-	background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+
+.bgimage {
+	background-image: url("../images/BOOTCAMPUI.jpg")
+	/* background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
 }
