@@ -1,107 +1,49 @@
 {% extends 'bootcamp_app/game.html' %}
-{% block content %}
-<h1>Welcome to Day 5, {{character.name}}</h1>
+  {% block content %}
+    <h1>Welcome to Day 5, {{character.name}}</h1>
 
-<h4>
-  Can you believe it? You're halfway through BOOTCAMP.
-</h4>
-<p>
-  Professor Blueslime puts you through your paces this morning by having you work on Django routes and views. It takes you all morning to figure out what goes where, and you take a break for lunch.
-</p>
+    <h4>
+      Can you believe it? You're halfway through BOOTCAMP.
+    </h4>
+    <p>
+      Professor Blueslime puts you through your paces this morning by having you work on Django routes and views. It takes you all morning to figure out what goes where, and you take a break for lunch.
+    </p>
 
-<h4>WAT! A POP QUIZ!</h4>
+    <h4>WAT! A POP QUIZ!</h4>
 
-<p>
-  Surprise!!
-</p>
+    <p>
+      Surprise!!
+    </p>
 
-<p>
-  After lunch, Professor Blueslime booms, "It's time for a pop quiz, kids! Have you been paying attention in class and finishing the labs? Well, we'll find out!"
-</p>
+    <p>
+      After lunch, Professor Blueslime booms, "It's time for a pop quiz, kids! Have you been paying attention in class and finishing the labs? Well, we'll find out!"
+    </p>
 
-<p>
-  "Answer this question right now!"
-</p>
+    <p>
+      "Answer this question right now!"
+    </p>
 
-  <h5>The following statement prints "Python is fun" 10 times.</h5>
-  <pre>
-    <code>
-      for count in range(1, 11):
-        print("Python is fun")
-    </code>
-  </pre>
+    <h5>The following statement prints "Python is fun" 10 times.</h5>
+    <pre>
+      <code>
+        for count in range(1, 11):
+          print("Python is fun")
+      </code>
+    </pre>
 
 
-  <a href="{% url 'quiz1true' pk=character.id %}">
-    <button id="continue" class="continue-button">
-      True.
-    </button>
-  </a>
+    <a href="{% url 'quiz1true' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        True.
+      </button>
+    </a>
 
-  <a href="{% url 'quiz1false' pk=character.id %}">
-    <button id="continue" class="continue-button">
-      False.
-    </button>
-  </a>
-  <!-- <h5>{{quiz.question}}</h5>
+    <a href="{% url 'quiz1false' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        False.
+      </button>
+    </a>
 
-  {% if quiz.answer == false %}
-
-    <form class="quiz1-fail">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz1_status" value="fail" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is true.
-		  </button>
-		</form>
-
-    <form class="quiz1-success">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz1_status" value="success" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="-10" />
-		  <input type="hidden" name="knowledge" value=
-		  "0">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is false.
-		  </button>
-		</form>
   {% endif %}
 
-  {% if quiz.answer == true %}
-
-		<form class="quiz1-success">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz1_status" value="success" />
-      <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is true.
-		  </button>
-		</form>
-
-    <form class="quiz1-fail">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz1_status" value="fail" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is false.
-		  </button>
-		</form> -->
-
-    {% endif %}
-
-  {% endblock %}
+{% endblock %}

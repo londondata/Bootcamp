@@ -20,17 +20,7 @@ if went out: -->
 				Drink some water and go to the next day.
 			</button>
 		</a>
-		<!-- <form id="day4">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-		  <input type="hidden" name="energy" value="-10" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "5">
-		  <button type="submit" id="continue" class="continue-button">
-				Drink some water and go to the next day.
-		  </button>
-		</form> -->
+
 		{% endif %}
 <!--
 if stayed in: -->
@@ -49,18 +39,6 @@ if stayed in: -->
 				Repress your sad feelings and go to the next day.
 			</button>
 		</a>
-
-		<!-- <form id="day4">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="-10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				Repress your sad feelings and go to the next day.
-		  </button>
-		</form> -->
 
     {% endif %}
 

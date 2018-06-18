@@ -1,37 +1,23 @@
 {% extends 'bootcamp_app/game.html' %}
 
-{% block content %}
+	{% block content %}
 
-<h1>Welcome to Day 8, {{character.name}}</h1>
+		<h1>Welcome to Day 8, {{character.name}}</h1>
 
-<p>You get up and go to class. Two more days (including this one) and a final exam, and you're done. </p>
+		<p>You get up and go to class. Two more days (including this one) and a final exam, and you're done. </p>
 
-<p>
-	Today's lesson involves the Django Rest Framework. Professor Blueslime demonstrates how to build a Django-based API, and how to use the API interface to CREATE, GET, and UPDATE data. It's a pretty long lecture and lab, and it takes the entire day.
-</p>
+		<p>
+			Today's lesson involves the Django Rest Framework. Professor Blueslime demonstrates how to build a Django-based API, and how to use the API interface to CREATE, GET, and UPDATE data. It's a pretty long lecture and lab, and it takes the entire day.
+		</p>
 
-<p>
-  You can't believe BOOTCAMP is almost over. Will you pass?
-</p>
+		<p>
+		  You can't believe BOOTCAMP is almost over. Will you pass?
+		</p>
 
-<!-- <div>
-	<form id="day8">
-		{% csrf_token %}
-		<input type="hidden" name="id" value="{{character.id}}" />
-		<input type="hidden" name="energy" value="-5" />
-		<input type="hidden" name="mood" value="-5" />
-		<input type="hidden" name="knowledge" value=
-		"5">
-		<button type="submit" id="continue" class="continue-button">
-					Go to the last day.
+		<a href="{% url 'day9' pk=character.id %}">
+			<button>
+				Go to Day 9. (And one day closer to the final!)
 			</button>
-	</form>
- -->
+		</a>
 
-<a href="{% url 'day9' pk=character.id %}">
-	<button>
-		Go to Day 9. (And one day closer to the final!)
-	</button>
-</a>
-
-{% endblock %}
+	{% endblock %}
