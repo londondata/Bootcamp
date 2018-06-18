@@ -413,12 +413,8 @@ def finalsoutcome(request, pk):
 
 
 def finals1true(request, pk):
-	energy = -5
-	mood = -10
-	knowledge = 0
 	character = Character.objects.get(id=pk)
-	update = character.update_stats(energy, mood, knowledge)
-	character.finals_count =
+	character.finals_count = 1
 	character.save()
 	stats = character.user_stats()
 	context = {
@@ -427,6 +423,32 @@ def finals1true(request, pk):
 	}
 	return redirect('finals2', pk=character.id)
 
+def finals1false(request, pk):
+	character = Character.objects.get(id=pk)
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect('finals2', pk=character.id)
+
+def finals2true(request, pk):
+	character = Character.objects.get(id=pk)
+	character.finals_count = 1
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect('finals3', pk=character.id)
+
+def finals2false(request, pk):
+	character = Character.objects.get(id=pk)
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect('finals3', pk=character.id)
 
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
