@@ -1,0 +1,11 @@
+{% extends 'bootcamp_app/game.html' %}
+
+{% block content %}
+
+<p> Hello. This is Day four!</p>
+
+<div>
+  <button><a href="{% url 'day5' pk=character.id %}">Go to the next day</a></button>
+</div>
+
+{% endblock %}

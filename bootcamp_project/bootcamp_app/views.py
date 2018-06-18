@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from .forms import CharacterForm
 from .models import Character
+import pickle
 
 # Create your views here.
 
@@ -31,7 +32,7 @@ def character_detail(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/character_detail.html', { 'character': character })
 
-#GAME DAYS 
+#GAME DAYS
 def day1(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day1.html', {'character': character })
@@ -48,7 +49,29 @@ def day4(request, pk):
 	character = Character.objects.get(id=pk)
 	return render(request, 'bootcamp_app/day4.html', {'character': character })
 
+def day5(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day5.html', {'character': character })
 
+def day6(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day6.html', {'character': character })
+
+def day7(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day7.html', {'character': character })
+
+def day8(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day8.html', {'character': character })
+
+def day9(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day9.html', {'character': character })
+
+def day10(request, pk):
+    character = Character.objects.get(id=pk)
+    return render(request, 'bootcamp_app/day10.html', {'character': character })
 
 
 

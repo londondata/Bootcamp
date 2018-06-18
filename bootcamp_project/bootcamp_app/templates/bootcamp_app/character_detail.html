@@ -2,9 +2,17 @@
 
 {% block content %}
     <h1>Character Confirmation</h1>
+    <form method="POST">
+      {% csrf_token %}
+      {% for field in form.visible_fields %}
+      {{ character.name }}
+      {{ character.age }}
 
-    {{ character.name }}
-    {{ character.age }}
+
+       {% endif %}
+
+       {% endfor %}
+     </form>
 
     <button type="default" class="save btn btn-default"><a href="{% url 'day1' pk=character.id %}">Begin BOOTCAMP</a></button>
 
