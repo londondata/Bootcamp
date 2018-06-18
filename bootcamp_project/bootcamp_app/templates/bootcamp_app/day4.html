@@ -2,44 +2,31 @@
 
 {% block content %}
 
-<h1>Welcome to Day 4, {{character.name}}</h1>
+<p> Hello. This is Day four!</p>
 <!--
 if went out: -->
 
-		{% if character.event1 == 1 %}
-		<p>
-			You had a great time seeing your best friend off, but you drank way too much and stayed out a LOT longer than you expected. You are so hung over!
-		</p>
+	{% if (went out) %}
 
-		<p>
-			You can barely concentrate on coding today and almost fall asleep when you try to set up your first Django project and application. You think you see Professor Blueslime glowering at you, but your vision is too blurry.
-		</p>
+	You drank way too much and stayed out longer than expected. You can barely concentrate on coding today and almost fall asleep in class.
 
-		<a href="{% url 'day5' pk=character.id %}">
-			<button id="continue" class="continue-button">
-				Drink some water and go to the next day.
-			</button>
-		</a>
 
-		{% endif %}
+	{% endif %}
 <!--
 if stayed in: -->
 
-    {% if character.event1 == 2 %}
 
-    <p>
-			Your studying pays off by improving your coding knowledge by a lot. You whiz through setting up your first Django project and application, and you even help your classmates set up their projects! Wait, was Professor Blueslime smiling at you?!
-		</p>
-		<p>
-			However, despite your successes in class today, you fall into a deep depression because you missed saying goodbye to your best friend. You know that they are super mad at you, and that sucks. You suffer a steep drop in your mood.
-		</p>
+    {% if stayed in %}
 
-		<a href="{% url 'day5' pk=character.id %}">
-			<button id="continue" class="continue-button">
-				Repress your sad feelings and go to the next day.
-			</button>
-		</a>
+    Your studying pays off with your coding knowledge, but you fall into a deep depression over missing your best friend and suffer a permanent drop in your mood.
+
+
 
     {% endif %}
+
+
+<div>
+  <button><a href="{% url 'day5' pk=character.id %}">Go to the next day</a></button>
+</div>
 
 {% endblock %}
