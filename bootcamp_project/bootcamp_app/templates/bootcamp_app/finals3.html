@@ -1,0 +1,21 @@
+{% extends 'bootcamp_app/game.html' %}
+
+  {% block content %}
+    <h1>Final Exam: Question 3</h1>
+
+
+    <h2></h2>
+
+    <a href="{% url 'finals3true' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        True.
+      </button></a>
+
+    <a href="{% url 'finals3false' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        False.
+      </button>
+    </a>
+
+
+  {% endblock %}

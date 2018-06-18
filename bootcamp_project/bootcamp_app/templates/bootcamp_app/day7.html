@@ -1,87 +1,39 @@
 {% extends 'bootcamp_app/game.html' %}
-<h1>Welcome to Day 7, {{character.name}}</h1>
+  {% block content %}
+    <h1>Welcome to Day 7, {{character.name}}</h1>
 
-<p>
-  Now that Professor Blueslime covered full CRUD, he sets you to work practicing with another CRUD-based lab so that you can get these techniques down. You spend all morning and the early afternoon working on Foodr (or is it Foodly?).
-</p>
+    <p>
+      Now that Professor Blueslime covered full CRUD, he sets you to work practicing with another CRUD-based lab so that you can get more practice. You spend all morning and the early afternoon working on Foodr (or is it Foodly?).
+    </p>
 
-<p>
-  You come back from your afternoon break, and .....
-</p>
+    <p>
+      You come back from your afternoon break, and .....
+    </p>
 
-<h2>O NOES! A POP QUIZ!</h4>
+    <h3>O NOES! A POP QUIZ!</h3>
 
-<p>
-  Say what?!
-</p>
+    <p>
+      Say what?!
+    </p>
 
-<p>
-  Professor Blueslime booms, "Ha! It's time for another pop quiz! Will you get this answer right or NOT?!"
-</p>
+    <p>
+      Professor Blueslime booms, "Ha! It's time for another pop quiz! Will you get this answer right or NOT?!"
+    </p>
 
-<p>
-  "Answer this question right now!"
-</p>
+    <p>
+      "Answer this question right now!"
+    </p>
 
-  <h5>{{quiz.question}}</h5>
+    <h4>When you use <code>django-admin</code> to start a project, it creates a project folder inside of the app folder. This project folder contains the <code>views.py</code> and <code>models.py</code> files.</h4>
 
-  {% if quiz.answer == false %}
+    <a href="{% url 'quiz2true' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        True.
+      </button></a>
 
-    <form class="quiz1-fail">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz2_status" value="fail" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is true.
-		  </button>
-		</form>
-
-    <form class="quiz1-success">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz2_status" value="success" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="-10" />
-		  <input type="hidden" name="knowledge" value=
-		  "0">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is false.
-		  </button>
-		</form>
-  {% endif %}
-
-  {% if quiz.answer == true %}
-
-		<form class="quiz1-success">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz2_status" value="success" />
-      <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is true.
-		  </button>
-		</form>
-
-    <form class="quiz1-fail">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-      <input type="hidden" name="quiz2_status" value="fail" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
-				This question is false.
-		  </button>
-		</form>
-
-    {% endif %}
-
+    <a href="{% url 'quiz2false' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        False.
+      </button>
+    </a>
   {% endblock %}

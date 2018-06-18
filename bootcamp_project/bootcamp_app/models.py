@@ -19,12 +19,12 @@ class Character(models.Model):
 	knowledge = models.IntegerField(default = 0)
 	profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank = True, related_name='characters')
 	is_completed = models.BooleanField(default=False)
-	event_one = models.IntegerField(null = True, blank = True)
-	event_two = models.IntegerField(null = True, blank = True)
-	event_three = models.IntegerField(null = True, blank = True)
-	quiz_one = models.CharField(max_length=100, null = True, blank = True)
-	quiz_two = models.CharField(max_length=100, null = True, blank = True)
-	finals_questions = models.IntegerField(null = True, blank = True)
+	event1 = models.IntegerField(null = True, blank = True)
+	event2 = models.IntegerField(null = True, blank = True)
+	event3 = models.IntegerField(null = True, blank = True)
+	quiz1 = models.CharField(max_length=100, null = True, blank = True)
+	quiz2 = models.CharField(max_length=100, null = True, blank = True)
+	finals_count = models.IntegerField(null = True, blank = True)
 
 
 	# Model vars to return
@@ -35,11 +35,15 @@ class Character(models.Model):
 
 	# Set energy status message
 	def energy_status(self):
-		if self.energy < 33:
-			self.es = "You are exhausted."
-		if self.energy >= 33 and self.energy < 66:
+		if self.energy < 20:
+			self.es = "You are absolutely drained of any energy."
+		if self.energy >= 20 and self.energy < 40:
+			self.es= "You're reaching the point of exhaustion."
+		if self.energy >=40 and self.energy < 60:
+			self.es = "You're starting to feel pretty worn out."
+		if self.energy >= 60 and self.energy < 80:
 			self.es = "You feel a little tired, but nothing that a little rest won't cure."
-		if self.energy >=66 and self.energy < 100:
+		if self.energy >= 80 and self.energy < 100:
 			self.es = "You feel pretty rested. You're ready to go kick some ass in class"
 		if self.energy >= 100:
 			self.es = "ZOMG! You are feeling super energetic! Who needs coffee?!?!!?"
@@ -47,11 +51,15 @@ class Character(models.Model):
 
 	# Set mood status message
 	def mood_status(self):
-		if self.mood < 33:
-			self.ms = "You feel oh so sad today. The world sucks."
-		if self.mood >= 33 and self.mood < 66:
+		if self.mood < 20:
+			self.ms = "You feel oh so very sad today. The world absolutely sucks."
+		if self.mood >= 20 and self.mood < 40:
+			self.ms = "Ugh. You feel pretty down right now, but you still have a faint glimmer of optimism."
+		if self.mood >= 40 and self.mood < 60:
 			self.ms = "You feel a little bummed, but tomorrow is another day."
-		if self.mood >= 66 and self.mood < 100:
+		if self.mood >= 60 and self.mood < 80:
+			self.ms = "You feel neutral -- neither sad nor happy."
+		if self.mood >= 80 and self.mood < 100:
 			self.ms = "You feel pretty great today."
 		if self.mood >= 100:
 			self.ms = "You are positively bursting with confidence!"
@@ -59,11 +67,15 @@ class Character(models.Model):
 
 	# Set knowledge status message
 	def knowledge_status(self):
-		if self.knowledge < 33:
+		if self.knowledge < 20:
 			self.ks = "You feel deeply ignorant."
-		if self.knowledge >= 33 and self.knowledge < 66:
-			self.ks = "You feel like you know....something.... (...right?)...."
-		if self.knowledge >= 66 and self.knowlege < 100:
+		if self.knowledge >=20 and self.knowledge < 40:
+			self.ks = "You feel like you're learning....something.... (...right?)...."
+		if self.knowledge >= 40 and self.knowledge < 60:
+			self.ks = "Things are starting to make sense now. The pieces are fitting together."
+		if self.knowledge >= 60 and self.knowledge < 80:
+			self.ks = "You feel like you're starting to master the material, if only a little bit."
+		if self.knowledge >= 80 and self.knowledge < 100:
 			self.ks = "You feel like you're learning a lot."
 		if self.knowledge >= 100:
 			self.ks = "Amazing! You feel like a Python and Django expert!"

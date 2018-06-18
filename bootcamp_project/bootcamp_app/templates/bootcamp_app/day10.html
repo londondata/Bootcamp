@@ -1,13 +1,30 @@
-<!-- {% extends 'bootcamp_app/game.html' %}
+{% extends 'bootcamp_app/game.html' %}
 
-{% block content %}
+	{% block content %}
 
-<p> Hello. This is Day 10!</p>
+		<h1>Welcome to Day 10, {{character.name}}</h1>
 
+		<p>
+			Finals day!
+		</p>
+		<p>
+      You take out your carefully sharpened #2 pencil from your backpack. You write your name on the front of the test. You wait for Professor Blueslime to give the start signal.
+    </p>
+		<p>
+			Are you ready to take the test?
+		</p>
+		<p>
+		  If you are, great! Click the button below.
+		</p>
 
-<div>
-  <button><a href="{% url 'day3' pk=character.id %}">Go to the next day</a></button>
-</div>
+		<p>
+		  If you're not, too bad! You still have to click the button below.
+		</p>
 
-{% endblock %}
- -->
+	  <button>Start the final!</button>
+
+		<p>
+			Good luck!
+		</p>
+
+	{% endblock %}

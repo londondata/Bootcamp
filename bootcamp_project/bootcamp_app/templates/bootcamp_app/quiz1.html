@@ -1,21 +1,29 @@
 {% extends 'bootcamp_app/game.html' %}
 
 {% block content %}
-
+<h1>How did you do on the quiz?</h1>
   {% if character.quiz1 == 'success' %}
   <h2>You passed!</h2>
     <p>
-      Congratulations! You got the question right! You feel smarter, and you gain confidence in your abilities!
+      Congratulations! You got the question right! You feel smarter about Python, and you gain confidence in your abilities!
     </p>
   {% endif %}
 
   {% if character.quiz1 == 'fail' %}
   <h2>You failed!</h2>
     <p>
-      Ugh! You got the question wrong! You feel sad, and feel like you haven't learned anything.
+      Ugh! You got the question wrong! You feel sad, and feel like you haven't learned much about Python.
     </p>
   {% endif %}
 
-  <a href="{% url 'day6' pk=character.id%}"></a><button>It's the weekend! And it goes by faster than you want it to....</button></a>
+  <p>
+    You finished your first quiz. It's the weekend! And it goes by faster than you want it to....
+  </p>
+
+  <a href="{% url 'day6' pk=character.id%}">
+    <button>
+      Go to Day 6.
+    </button>
+  </a>
 
 {% endblock %}

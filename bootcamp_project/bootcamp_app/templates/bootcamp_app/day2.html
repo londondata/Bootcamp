@@ -14,19 +14,10 @@
 	You have a feeling you will become a little more tired and crabby every day as BOOTCAMP progresses.
 </p>
 
-<!-- <div>
-	<form id="day2">
-		{% csrf_token %}
-		<input type="hidden" name="id" value="{{character.id}}" />
-		<input type="hidden" name="energy" value="-5" />
-		<input type="hidden" name="mood" value="-5" />
-		<input type="hidden" name="knowledge" value=
-		"5">
-		<button type="submit" id="continue" class="continue-button">
-					Go to the next day
-			</button>
-	</form> -->
-
-<a href="{% url 'day3' pk=character.id %}"><button>Wow, Day 2 is over. Go to Day 3.</button></a>
+<a href="{% url 'day3' pk=character.id %}">
+	<button>
+		Wow, Day 2 is over. Go to Day 3.
+	</button>
+</a>
 
 {% endblock %}

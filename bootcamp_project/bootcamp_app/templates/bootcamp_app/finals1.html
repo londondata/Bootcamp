@@ -1,0 +1,22 @@
+{% extends 'bootcamp_app/game.html' %}
+
+  {% block content %}
+    <h1>Final Exam: Question 1</h1>
+
+
+    <h2>Dictionaries can store complex types, but every item must be of the same type.</h2>
+
+    <a href="{% url 'finals1true' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        True.
+      </button>
+    </a>
+
+    <a href="{% url 'finals1false' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        False.
+      </button>
+    </a>
+
+
+  {% endblock %}

@@ -7,29 +7,20 @@
 if went out: -->
 
 		{% if character.event1 == 1 %}
-
 		<p>
-			You had a great time seeing your best friend off, but you drank way too much and stayed out longer than you expected. You are so hung over!
+			You had a great time seeing your best friend off, but you drank way too much and stayed out a LOT longer than you expected. You are so hung over!
 		</p>
 
 		<p>
 			You can barely concentrate on coding today and almost fall asleep when you try to set up your first Django project and application. You think you see Professor Blueslime glowering at you, but your vision is too blurry.
 		</p>
 
-		<a href="{% url 'day5' pk=character.id %}"></a><button id="continue" class="continue-button">
-			Drink some water and go to the next day.
-		</button></a>
-		<!-- <form id="day4">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-		  <input type="hidden" name="energy" value="-10" />
-		  <input type="hidden" name="mood" value="10" />
-		  <input type="hidden" name="knowledge" value=
-		  "5">
-		  <button type="submit" id="continue" class="continue-button">
+		<a href="{% url 'day5' pk=character.id %}">
+			<button id="continue" class="continue-button">
 				Drink some water and go to the next day.
-		  </button>
-		</form> -->
+			</button>
+		</a>
+
 		{% endif %}
 <!--
 if stayed in: -->
@@ -43,23 +34,12 @@ if stayed in: -->
 			However, despite your successes in class today, you fall into a deep depression because you missed saying goodbye to your best friend. You know that they are super mad at you, and that sucks. You suffer a steep drop in your mood.
 		</p>
 
-		<a href="{% url 'day5' pk=character.id %}"></a><button id="continue" class="continue-button">
-			Repress your sad feelings and go to the next day.
-		</button></a>
-
-		<!-- <form id="day4">
-		  {% csrf_token %}
-		  <input type="hidden" name="id" value="{{character.id}}" />
-		  <input type="hidden" name="energy" value="-5" />
-		  <input type="hidden" name="mood" value="-10" />
-		  <input type="hidden" name="knowledge" value=
-		  "10">
-		  <button type="submit" id="continue" class="continue-button">
+		<a href="{% url 'day5' pk=character.id %}">
+			<button id="continue" class="continue-button">
 				Repress your sad feelings and go to the next day.
-		  </button>
-		</form> -->
+			</button>
+		</a>
 
     {% endif %}
-
 
 {% endblock %}
