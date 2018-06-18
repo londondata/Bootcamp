@@ -255,7 +255,12 @@ def event2(request, pk):
 	return render(request, 'bootcamp_app/event2.html', context)
 
 def day7(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 5
 	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -310,7 +315,6 @@ def day8(request, pk):
 	character = Character.objects.get(id=pk)
 	update = character.update_stats(energy, mood, knowledge)
 	character.save()
-	character = Character.objects.get(id=pk)
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -319,7 +323,12 @@ def day8(request, pk):
 	return render(request, 'bootcamp_app/day8.html', context)
 
 def day9(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 5
 	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
