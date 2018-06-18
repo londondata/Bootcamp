@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns =[
 	path('', views.home, name='home'),
+	path('', views.character_detail, name='character_detail'),
 	path('character/new', views.character_create, name="character_create"),
 	path('character/<int:pk>', views.character_detail, name="character_detail"),
 	path('game/day1/<int:pk>', views.day1, name="day1"),

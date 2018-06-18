@@ -29,7 +29,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username = username, password = raw_password)
             login(request, user)
-            return redirect('/')
+            return redirect('home')
     else:
         form = UserCreationForm()
     return render(request, 'bootcamp_app/signup.html', {'form': form})
@@ -454,6 +454,7 @@ def finalsoutcome(request, pk):
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
 	character.knowledge += (character.finals_count * 10)
+	character.is_completed = Trues
 	character.save()
 	stats = character.user_stats()
 	context = {
