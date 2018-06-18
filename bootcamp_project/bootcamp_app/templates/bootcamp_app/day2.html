@@ -2,14 +2,31 @@
 
 {% block content %}
 
-<h1>Welcome to Day 2</h1>
+<h1>Welcome to Day 2, {{character.name}}</h1>
 
-<p>You do some things and learn some stuff, but notice that you're tired and a bit irritated. </p>
+<p>You get up and go to class, but notice that you're tired and a bit irritated. </p>
 
-<p>You have a feeling you will become a little more tired and crabby every day as BOOTCAMP progresses.</p>
+<p>
+	Professor Blueslime covers more information about Python syntax and data types. You work on implementing FizzBuzz in Python and work on a basic trivia game that runs in the Python REPL in the terminal. It's fun, but you feel a little slower when it comes to learning new stuff today.
+</p>
 
-<div>
-	<button class = "save"><a href="{% url 'day3' pk=character.id %}">Go to the next day</a></button>
-</div>
+<p>
+	You have a feeling you will become a little more tired and crabby every day as BOOTCAMP progresses.
+</p>
+
+<!-- <div>
+	<form id="day2">
+		{% csrf_token %}
+		<input type="hidden" name="id" value="{{character.id}}" />
+		<input type="hidden" name="energy" value="-5" />
+		<input type="hidden" name="mood" value="-5" />
+		<input type="hidden" name="knowledge" value=
+		"5">
+		<button type="submit" id="continue" class="continue-button">
+					Go to the next day
+			</button>
+	</form> -->
+
+<a href="{% url 'day3' pk=character.id %}"><button>Wow, Day 2 is over. Go to Day 3.</button></a>
 
 {% endblock %}

@@ -1,0 +1,19 @@
+% extends 'bootcamp_app/game.html' %}
+
+{% block content %}
+
+  {% if character.quiz2 == 'success' %}
+    <p>
+      Congratulations! You got the question right! You feel smarter, and you gain confidence in your abilities!
+    </p>
+  {% endif %}
+
+  {% if character.quiz2 == 'fail' %}
+    <p>
+      Ugh! You got the question wrong! You feel sad, and you feel like you're not learning much.
+    </p>
+  {% endif %}
+
+  <button>Well, BOOTCAMP is almost over. Just three more days.</button>
+
+{% endblock %}

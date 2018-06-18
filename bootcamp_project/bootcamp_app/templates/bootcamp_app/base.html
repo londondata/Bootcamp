@@ -1,9 +1,6 @@
 {% load staticfiles %}
 {% load widget_tweaks %}
 
-<!-- <img src"{% static 'static/javascript/app.js' %}" /> -->
-
-<!-- <script src="" charset="utf-8"></script> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +9,8 @@
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+
 </head>
 <body>
 	<header class="headerColorBand">
@@ -43,25 +42,29 @@
 					</div>
         {% endif %}
     </div>
+<title>BOOTCAMP</title>
 
-		<!-- <form class="inputForm">
-		  <div class="form-group row">
-		    <label for="user_name" class="col-sm-2 col-form-label">Username</label>
-				<input type="text" class="form-control offset-sm-1 col-sm-7" placeholder="Username">
-		  </div>
-		  <div class="form-group row">
-		    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
- 				<input type="password" class="form-control offset-sm-1 col-sm-7" id="inputPassword3" placeholder="Password">
-		  </div>
+</head>
+<body>
+    <h1> Welcome to BOOTCAMP</h1>
+    <h2>PREPARE TO STUDY</h2>
 
-		  <div class="form-group row">
-		    <div class="col-sm-10">
-					<div>
-						<button type="submit" class="btn btn-primary btn-sm btn-block btn-red moveCenter">Sign in</button>
-					</div>
-		    </div>
-		  </div>
-		</form> -->
+<nav>
+    {% if not user.is_authenticated %}
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+
+    {% endif %}
+</nav>
+
+    <div class="user-info">
+       {% if user.is_authenticated %}
+           Welcome, {{ user.username }}
+           <a href="{% url 'character_create' %}">Create Character</a>
+           <a href="{% url 'logout' %}">Logout</a>
+       {% endif %}
+   </div>
+
 
 {% block content %}
 
@@ -70,13 +73,5 @@
 <footer class="about">About The BOOTCAMP Dev<p>
 	<a href="http://www.github.com/teripanda" target="_blank">Teri</a> <a href="http://www.github.com/juney3" target="_blank">June</a> <a href="http://www.github.com/chrispykan" target="_blank">Chris</a> <a href="http://www.github.com/mashwhite" target="_blank">Riki</a>
 </footer>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- add js file -->
-    <script src="/static/javascript/app.js"></script>
-    <!-- Consider also adding Bootstrap.js here! -->
-    {% block extra_js %}{% endblock extra_js %}
-
 </body>
 </html>

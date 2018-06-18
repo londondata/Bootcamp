@@ -1,13 +1,87 @@
 {% extends 'bootcamp_app/game.html' %}
+<h1>Welcome to Day 7, {{character.name}}</h1>
 
-{% block content %}
+<p>
+  Now that Professor Blueslime covered full CRUD, he sets you to work practicing with another CRUD-based lab so that you can get these techniques down. You spend all morning and the early afternoon working on Foodr (or is it Foodly?).
+</p>
 
+<p>
+  You come back from your afternoon break, and .....
+</p>
 
-<p> This is Day 7</p>
-<div>
+<h2>O NOES! A POP QUIZ!</h4>
 
-  <button><a href="{% url 'day8' pk=character.id %}">Go to the next day</a></button>
+<p>
+  Say what?!
+</p>
 
-</div>
+<p>
+  Professor Blueslime booms, "Ha! It's time for another pop quiz! Will you get this answer right or NOT?!"
+</p>
 
-{% endblock %}
+<p>
+  "Answer this question right now!"
+</p>
+
+  <h5>{{quiz.question}}</h5>
+
+  {% if quiz.answer == false %}
+
+    <form class="quiz1-fail">
+		  {% csrf_token %}
+		  <input type="hidden" name="id" value="{{character.id}}" />
+      <input type="hidden" name="quiz2_status" value="fail" />
+		  <input type="hidden" name="energy" value="-5" />
+		  <input type="hidden" name="mood" value="10" />
+		  <input type="hidden" name="knowledge" value=
+		  "10">
+		  <button type="submit" id="continue" class="continue-button">
+				This question is true.
+		  </button>
+		</form>
+
+    <form class="quiz1-success">
+		  {% csrf_token %}
+		  <input type="hidden" name="id" value="{{character.id}}" />
+      <input type="hidden" name="quiz2_status" value="success" />
+		  <input type="hidden" name="energy" value="-5" />
+		  <input type="hidden" name="mood" value="-10" />
+		  <input type="hidden" name="knowledge" value=
+		  "0">
+		  <button type="submit" id="continue" class="continue-button">
+				This question is false.
+		  </button>
+		</form>
+  {% endif %}
+
+  {% if quiz.answer == true %}
+
+		<form class="quiz1-success">
+		  {% csrf_token %}
+		  <input type="hidden" name="id" value="{{character.id}}" />
+      <input type="hidden" name="quiz2_status" value="success" />
+      <input type="hidden" name="energy" value="-5" />
+		  <input type="hidden" name="mood" value="10" />
+		  <input type="hidden" name="knowledge" value=
+		  "10">
+		  <button type="submit" id="continue" class="continue-button">
+				This question is true.
+		  </button>
+		</form>
+
+    <form class="quiz1-fail">
+		  {% csrf_token %}
+		  <input type="hidden" name="id" value="{{character.id}}" />
+      <input type="hidden" name="quiz2_status" value="fail" />
+		  <input type="hidden" name="energy" value="-5" />
+		  <input type="hidden" name="mood" value="10" />
+		  <input type="hidden" name="knowledge" value=
+		  "10">
+		  <button type="submit" id="continue" class="continue-button">
+				This question is false.
+		  </button>
+		</form>
+
+    {% endif %}
+
+  {% endblock %}

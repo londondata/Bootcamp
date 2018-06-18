@@ -1,12 +1,3 @@
-/* {
-	border: 1px solid black;
-}*/
-
-/*background-image: url(images/blog_header_bg.jpg);*/
-
-/*@media(min-width: 768px){
-	.wrapper {
-}*/
 
 {
   box-sizing: border-box;
@@ -160,4 +151,3 @@ h6 {
 footer {
     margin-top: 10em;
     margin-bottom: 5em;
-}

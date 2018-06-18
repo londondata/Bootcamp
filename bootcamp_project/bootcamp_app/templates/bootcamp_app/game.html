@@ -8,12 +8,37 @@
 	<link rel="stylesheet" href="{% static 'css/game.css' %}">
 </head>
 <body>
-	<p> This is Bootcamp, {{character.name}}!</p>
 
 {% block content %}
 
 {% endblock%}
 
-<footer> STATS GO HERE </footer>
+<footer> STATS GO HERE
+	<div class="stat-box">
+	<ul>
+		{% for status in stats %}
+		<li>
+				{{status}}
+		</li>
+		{% endfor %}
+	</ul>
+
+	<p>energy: {{character.energy}}	</p>
+	<p>
+		mood: {{character.mood}}
+	</p>
+	<p>
+		knowledge: {{character.knowledge}}
+	</p>
+
+
+	</div>
+</footer>
 </body>
+
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous" defer></script>
+<script src="/static/scripts/app.js" defer></script>
 </html>

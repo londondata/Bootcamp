@@ -1,19 +1,18 @@
 {% extends 'bootcamp_app/base.html' %}
 
 {% block content %}
-    <h1>Character Confirmation</h1>
-    <form method="POST">
-      {% csrf_token %}
-      {% for field in form.visible_fields %}
+
+    <h1>Character Info</h1>
+
       {{ character.name }}
       {{ character.age }}
 
+    <h1>Character Information</h1>
 
-       {% endif %}
-
-       {% endfor %}
-     </form>
-
-    <button type="default" class="save btn btn-default"><a href="{% url 'day1' pk=character.id %}">Begin BOOTCAMP</a></button>
+    <a href="{% url 'day1' pk=character.id %}">
+      <button type="default" class="save btn btn-default">
+        Begin BOOTCAMP
+      </button>
+    </a>
 
 {% endblock %}
