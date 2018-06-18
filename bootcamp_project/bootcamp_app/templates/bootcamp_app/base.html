@@ -56,6 +56,17 @@
 </head>
 
 <body>
+	{% if user.is_authenticated %}
+			<p>
+				Create a character to get started
+			</p>
+	{% endif %}
+
+	{% if not user.is_authenticated %}
+			<p>
+				Create an account or sign in to get started
+			</p>
+	{% endif %}
 
 {% block content %}
 
