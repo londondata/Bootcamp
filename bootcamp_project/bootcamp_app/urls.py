@@ -36,6 +36,8 @@ urlpatterns =[
 	path('game/quiz2/<int:pk>', views.quiz2, name="quiz2"),
 	path('game/quiz2true/<int:pk>', views.quiz2true, name="quiz2true"),
 	path('game/quiz2false/<int:pk>', views.quiz2false, name="quiz2false"),
-	# path('game/finals/<int:pk>', views.finals, name="finals"),
+	path('game/finals1/<int:pk>', views.finals1, name="finals1"),
+	path('game/finals2/<int:pk>', views.finals2, name="finals2"),
+	path('game/finals3/<int:pk>', views.finals3, name="finals3"),
 	path('game/destiny/<int:pk>', views.destiny, name="destiny"),
 ]

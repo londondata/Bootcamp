@@ -1,7 +1,21 @@
-{% extends 'bootcamp_app/game.html' %}
+{{% extends 'bootcamp_app/game.html' %}
 
-{% block content %}
+  {% block content %}
+    <h1>Final Exam: Question 2</h1>
 
 
+    <h2></h2>
 
-{% endblock %}
+    <a href="{% url 'finals2true' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        True.
+      </button></a>
+
+    <a href="{% url 'finals2false' pk=character.id %}">
+      <button id="continue" class="continue-button">
+        False.
+      </button>
+    </a>
+
+
+  {% endblock %}

@@ -375,6 +375,59 @@ def day10(request, pk):
 	}
 	return render(request, 'bootcamp_app/day10.html', context)
 
+def finals1(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/finals1.html', context)
+
+def finals2(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/finals2.html', context)
+
+def finals3(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/finals3.html', context)
+
+def finalsoutcome(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/finalsoutcome.html', context)
+
+
+def finals1true(request, pk):
+	energy = -5
+	mood = -10
+	knowledge = 0
+	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.finals_count =
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect('finals2', pk=character.id)
+
+
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
 	stats = character.user_stats()

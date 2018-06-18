@@ -1,0 +1,21 @@
+{% extends 'bootcamp_app/game.html' %}
+
+  {% block content %}
+    <h1>How did you do on the test?</h1>
+
+    <p>
+      You get your score back. You got {{character.finals_count}} out of 3 questions correct.
+    </p>
+    <p>
+      Your bootcamp journey is officially over.
+    </p>
+    <p>
+      So, what happens next?
+    </p>
+      <a href="{% url 'day8' pk=character.id %}">
+        <button>
+          Confront your BOOTCAMP destiny.
+        </button>
+      </a>
+
+  {% endblock %}
