@@ -2,17 +2,21 @@
 
 {% block content %}
 
-Once again you feel a bit more tired and a bit more crabby, but you manage to focus and retain a lot of information for the day.
+<h1>Welcome to Day 3</h1>
 
-Your best friend messages you and reminds you that they are moving away forever the very next day. You know that if you miss this opportunity to say goodbye that you will be so sad you may lose the ability to work as hard, but if you stay in and study you may do better in school. 
+<h1>Welcome to Day 3, {{character.name}}</h1>
+<p>
+   You're a little tired as Professor Blueslime lectures about how Python virtual environments and how Django works as a web application framework. You have some trouble concentrating when you use pip to install Django and some other libraries.
+</p>
 
-Do you choose to go out for a couple of hours to see your best friend off or do you stay in and study?
+<p>
+  Though you feel a bit more tired and a bit more crabby, you manage to focus and retain a good amount of information for the day.
+</p>
 
-<button><a href="#">Go Out</a></button>
-<button><a href="#">Stay In</a></button>
 
-<div>
-  <button><a href="{% url 'day4' pk=character.id %}">Go to the next day</a></button>
-</div>
-
+<a href="{% url 'event1' pk=character.id %}">
+	<button>
+		Time to go home!
+	</button>
+</a>
 {% endblock %}

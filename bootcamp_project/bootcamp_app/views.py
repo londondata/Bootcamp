@@ -7,9 +7,12 @@ from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
 from .forms import CharacterForm
 from .models import Character
 from .serializers import CharacterSerializer
+import json
 
 # Create your views here.
 
@@ -47,21 +50,219 @@ def day1(request, pk):
 	return render(request, 'bootcamp_app/day1.html', context)
 
 def day2(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 5
 	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/day2.html', {'character': character })
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day2.html', context)
 
 def day3(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 5
 	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/day3.html', {'character': character })
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day3.html', context)
+
+def event1(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/event1.html', context)
+
+def choice1(request, pk):
+	energy = -10
+	mood = 10
+	knowledge = 5
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	update = character.update_stats(energy, mood, knowledge)
+	character.event1 = 1
+	character.save()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/day4.html', pk=character.id)
+
+def choice2(request, pk):
+	energy = -5
+	mood = -10
+	knowledge = 10
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	update = character.update_stats(energy, mood, knowledge)
+	character.event1 = 2
+	character.save()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/day4.html', pk=character.id)
 
 def day4(request, pk):
 	character = Character.objects.get(id=pk)
-	return render(request, 'bootcamp_app/day4.html', {'character': character })
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day4.html', context)
 
 def day5(request, pk):
-    character = Character.objects.get(id=pk)
-    return render(request, 'bootcamp_app/day5.html', {'character': character })
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day5.html', context)
 
+# This is hardcoded for now
+def quiz1true(request, pk):
+	energy = -5
+	mood = 10
+	knowledge = 10
+	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.quiz1 = "success"
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/quiz1.html', pk=character.id)
+
+def quiz1false(request, pk):
+	energy = -5
+	mood = -10
+	knowledge = 0
+	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.quiz1 = "fail"
+	character.save()
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/quiz1.html', pk=character.id)
+
+def day6(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day6.html', context)
+
+def choice3(request, pk):
+	energy = -5
+	mood = 5
+	knowledge = 10
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	update = character.update_stats(energy, mood, knowledge)
+	character.event2 = 3
+	character.save()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/event2.html', pk=character.id)
+
+def choice4(request, pk):
+	energy = -5
+	mood = -5
+	knowledge = 0
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	update = character.update_stats(energy, mood, knowledge)
+	character.event2 = 4
+	character.save()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/event2.html', pk=character.id)
+
+def choice5(request, pk):
+	energy = -5
+	mood = 0
+	knowledge = 5
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	update = character.update_stats(energy, mood, knowledge)
+	character.event2 = 5
+	character.save()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return redirect( 'bootcamp_app/event2.html', pk=character.id)
+
+def event2(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/event2.html', context)
+
+def day7(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day7.html', context)
+
+def day8(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day8.html', context)
+
+def day9(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day9.html', context)
+
+def day10(request, pk):
+	character = Character.objects.get(id=pk)
+	stats = character.user_stats()
+	context = {
+		'character': character,
+		'stats': stats
+	}
+	return render(request, 'bootcamp_app/day10.html', context)
 
 @login_required
 def character_create(request):
@@ -76,20 +277,22 @@ def character_create(request):
         form = CharacterForm()
     return render(request,  'bootcamp_app/form.html', {'form': form})
 
+
 class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Character.objects.all()
 	serializer_class = CharacterSerializer
+	parser_classes = (JSONParser,)
 
-	def put(request, pk):
-		character = Character.objects.get(id=pk)
-		day = 1
-
-		serializer = CharacterSerializer(character, data = request.DATA)
+	def put(self, request, *args, **kwargs):
+		data = request.data
+		serializer = CharacterSerializer(character, data=request.data, partial=True)
 		if serializer.is_valid():
-			character.energy = int(data.mood)
-			character.mood = int(data.mood)
-			character.knowledge = int(data.mood)
-			character.save()
-			return redirect('day2', pk=character.pk)
+			self.energy += int(data['energy'])
+			self.mood += int(data['mood'])
+			self.knowledge += int(['knowledge'])
+			serializer.save()
+		#
+		# if request.data:
+			return HttpRedirectResponse(redirect_to ='/day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

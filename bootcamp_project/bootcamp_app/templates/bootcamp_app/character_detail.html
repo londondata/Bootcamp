@@ -1,16 +1,18 @@
 {% extends 'bootcamp_app/base.html' %}
 
 {% block content %}
+
     <h1>Character Info</h1>
 
-    {{ character.name }}
-    {{ character.age }}
+      {{ character.name }}
+      {{ character.age }}
 
-    <p>
-      You are a new bootcamp student!
-    </p>
+    <h1>Character Information</h1>
 
-
-    <button type="default" class="save btn btn-default"><a href="{% url 'day1' pk=character.id %}">Begin BOOTCAMP</a></button>
+    <a href="{% url 'day1' pk=character.id %}">
+      <button type="default" class="save btn btn-default">
+        Begin BOOTCAMP
+      </button>
+    </a>
 
 {% endblock %}

@@ -1,9 +1,22 @@
 {% extends 'bootcamp_app/base.html' %}
 
-{% block content %}
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-{% endblock %}
+  {% block content %}
+
+    <h2 class="signUpQuestion">Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form.visible_fields %}
+     <div class="form-group signUpForm">
+       <div class="fieldLabels">{{ field.label_tag }}
+       {{ field }}
+       </div>
+       {% if field.help_text %}
+         <small class="form-text text-muted">{{ field.help_text }}</small>
+       {% endif %}
+     </div>
+     {% endfor %}
+      <button type="submit" class="btn btn-primary btn-sm btn-red2 moveCenter2">Login</button>
+    </form>
+
+
+  {% endblock %}

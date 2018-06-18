@@ -1,13 +1,79 @@
-<!-- {% extends 'bootcamp_app/game.html' %}
+{% extends 'bootcamp_app/game.html' %}
 
 {% block content %}
+<h1>Welcome to Day 6, {{character.name}}</h1>
 
-<p> This is Day 6</p>
+<p>
+  Today, Professor Blueslime assigns you the task of setting up and testing CRUD operations with the Django ORM and PostgreSQL. In his commanding voice, he says: "Work on getting full CRUD by tomorrow morning! Whatever you don't get done today is homework!"
+</p>
 
-<div>
-  <button><a href="{% url 'day7' pk=character.id %}">Go to the next day</a></button>
+<p>
+  Throughout the day, you set up your database and create some forms based on the models. You set up a basic index route, and code your view logic to create and retrieve records from the database. You finally set up your base and partial HTML pages, and you're ready to start testing!
+</p>
 
-</div>
+<p>
+  So far, so good. To your relief, you can create new records in the database and retrieve all of them after some debugging. Professor Blueslime will be so pleased! You go home feeling somewhat optimistic.
+</p>
+
+<p>
+  After dinner, you start building the update functionality. However, when you test it, nothing works! You try troubleshooting your forms, routes, and views. But no matter what you do, you can't figure out why you're getting the Django debug page for the update feature.
+</p>
+<p>
+  Do you choose to continue debugging the update feature, or do you work on something else?
+</p>
+
+{% if character.knowledge >= 40 %}
+<!-- <form id="choice3" class="game-form">
+  {% csrf_token %}
+  <input type="hidden" name="id" value="{{character.id}}" />
+  <input type="hidden" name="choice" value="3" />
+  <input type="hidden" name="energy" value="-5" />
+  <input type="hidden" name="mood" value="5" />
+  <input type="hidden" name="knowledge" value=
+  "10">
+  <button type="submit" id="continue" class="continue-button">
+    Keep on debugging the update feature.
+  </button>
+</form> -->
+
+<a href="{% url 'choice3' pk=character.id %}"></a><button id="continue" class="continue-button">
+  Keep on debugging the update feature
+</button></a>
+{% endif %}
+
+{% if character.knowledge < 40 %}
+<!-- <form id="choice4" class="game-form">
+  {% csrf_token %}
+  <input type="hidden" name="id" value="{{character.id}}" />
+  <input type="hidden" name="choice" value="4" />
+  <input type="hidden" name="energy" value="-5" />
+  <input type="hidden" name="mood" value="-5" />
+  <input type="hidden" name="knowledge" value=
+  "0">
+  <button type="submit" id="continue" class="continue-button">
+    Keep on debugging the update feature.
+  </button>
+</form> -->
+<a href="{% url 'choice4' pk=character.id %}"></a><button id="continue" class="continue-button">
+  Keep on debugging the update feature
+</button></a>
+{% endif %}
+
+<!-- <form id="choice5" class="game-form">
+  {% csrf_token %}
+  <input type="hidden" name="id" value="{{character.id}}" />
+  <input type="hidden" name="choice" value="5" />
+  <input type="hidden" name="energy" value="-5" />
+  <input type="hidden" name="mood" value="0" />
+  <input type="hidden" name="knowledge" value=
+  "5">
+  <button type="submit" id="continue" class="continue-button">
+    I'm going to work on adding some basic CSS so the page isn't fugly, then work on the delete feature.
+  </button>
+</form> -->
+
+<a href="{% url 'choice5' pk=character.id %}"></a><button id="continue" class="continue-button">
+  I'm going to work on adding some basic CSS so the page isn't fugly, then see where I'm at.
+</button></a>
 
 {% endblock %}
- -->

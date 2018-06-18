@@ -2,24 +2,32 @@
 
 {% block content %}
 
-<h1>Welcome to Day 1</h1>
+<h1>Welcome to Day 1, {{character.name}}</h1>
 
 <p>You arrive fresh and ready to learn! You're so excited!</p>
 
-<p>You meet your instructor, Professor B. Slime. He has a mighty booming voice and says he will whip you into shape so you learn Python and Django! </p>
+<p>You meet your instructor, Professor Blueslime. He has a mighty booming voice and says he will whip you into shape so you learn Python and Django! </p>
+
+<p>
+	You start learning about Python basics. Professor Blueslime starts out by relating Python to what you already know about JavaScript. You pay a lot of attention to Professor Blueslime's lectures, and work hard on the labs.
+</p>
 
 <p>You are upbeat and learn a lot of knowledge for the day, and you go home with a spring in your step.</p>
 
 
-
-<div>
-	<button id="continue1" class="continue-button"
-		data-stats = "{'energy': -5, 'mood': -5, 'knowledge': 10}"
-		 data-energy="-5" data-mood="-5" data-knowledge="10">
-			<!-- <a href="{% url 'day2' pk=character.id %}"> -->
-				Go to the next day
-			<!-- </a> -->
-		</button>
-</div>
+<!-- <div>
+	<form id="day1">
+		{% csrf_token %}
+		<input type="hidden" name="id" value="{{character.id}}" />
+		<input type="hidden" name="energy" value="-5" />
+		<input type="hidden" name="mood" value="-5" />
+		<input type="hidden" name="knowledge" value=
+		"10">
+		<button type="submit" id="continue1" class="continue-button">
+					Go to the next day
+			</button>
+	</form>
+</div> -->
+<a href="{% url 'day2' pk=character.id %}"><button>Your first day was great! Go to day 2.</button></a>
 
 {% endblock %}

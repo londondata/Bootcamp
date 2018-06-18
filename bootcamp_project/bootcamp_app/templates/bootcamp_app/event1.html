@@ -1,33 +1,47 @@
-{% extends 'bootcamp_app/base.html' %}
+{% extends 'bootcamp_app/game.html' %}
+
 {% block content %}
 
-<!DOCTYPE html>
+<p>
+  When you get home from class, your best friend messages you and reminds you that they are moving away forever the very next day.
+</p>
 
-<form action="/create_post/" method="POST" id="event1-form">
-<p> Your friend is moving away....</p>
-<input type="submit" value="Go Out">
-<input type="submit" value="Stay ">
+<p>
+  You know that if you miss this opportunity to say goodbye,  you will be so sad that you might lose the ability to work as hard. But if you stay in and study, you might do better in school.
+</p>
 
-</form>
+<p>
+  Do you choose to go out for a couple of hours to see your best friend off, or do you stay in and study?
+</p>
 
-<div>
-  <button><a href="{% url 'day4' pk=character.id %}">Go to the next day</a></button>
-</div>
+<!-- <form id="choice1" class="game-form">
+  {% csrf_token %}
+  <input type="hidden" name="id" value="{{character.id}}" />
+  <input type="hidden" name="choice" value="1" />
+  <input type="hidden" name="energy" value="-5" />
+  <input type="hidden" name="mood" value="-5" />
+  <input type="hidden" name="knowledge" value=
+  "5">
+  <button type="submit" id="continue" class="continue-button">
+    I'm going out!
+  </button> -->
+<!-- </form> -->
 
-{% endblock %}
+<a href="{% url 'choice1' pk=character.id %}"><button>I can study later. I'm going out!</button></a>
 
-<!DOCTYPE html>
-<head>
-    <title>Index page</title>
-</head>
-<body>
-    <div id="header">Welcome to index page</div>
-    <div id="content">
-        <p>Enter your name</p>
-        <form action="/result/" method="post" accept-charset="utf-8">{% csrf_token %}
-            <input type="text" name="answer">
-            <input type="submit" value="Send!">
-        </form>
-    </div>
-</body>
+<!-- <form id="choice2" class="game-form">
+  {% csrf_token %}
+  <input type="hidden" name="id" value="{{character.id}}" />
+  <input type="hidden" name="choice" value="2" />
+  <input type="hidden" name="energy" value="-5" />
+  <input type="hidden" name="mood" value="-5" />
+  <input type="hidden" name="knowledge" value=
+  "5">
+  <button type="submit" id="continue" class="continue-button">
+    I'm staying home and studying.
+  </button>
+</form> -->
+
+<a href="{% url 'choice2' pk=character.id %}"><button>I really need to learn Python. I'm staying home and studying.</button></a>
+
 {% endblock %}
