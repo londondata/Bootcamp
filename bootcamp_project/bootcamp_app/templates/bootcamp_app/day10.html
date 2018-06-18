@@ -21,14 +21,18 @@
 		  If you're not, too bad! You still have to click the button below.
 		</p>
 
-	  <a href="{% url 'finals1' pk=character.id %}">
-			<button>
-				Start the final!
-			</button>
-		</a>
+		<div class="take-final">
+			<a href="{% url 'finals1' pk=character.id %}">
+				<button>
+					Start the final!
+				</button>
+			</a>
+			<p>
+				Good luck!
+			</p>
+		</div>
 
-		<p>
-			Good luck!
-		</p>
+
+
 
 	{% endblock %}

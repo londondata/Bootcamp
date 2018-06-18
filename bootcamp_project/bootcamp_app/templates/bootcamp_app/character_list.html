@@ -1,0 +1,23 @@
+{% extends 'bootcamp_app/base.html' %}
+
+{% block content %}
+
+    <h1>{{user.username}}'s Info</h1>
+
+    <h3>Character Information</h3>
+      <ul>
+        {% for character in user.profile.characters %}
+        <li>
+          character.name
+        </li>
+      </ul>
+
+
+
+    <a href="{% url 'day1' pk=character.id %}">
+      <button type="default" class="save btn btn-default">
+        Begin BOOTCAMP
+      </button>
+    </a>
+
+{% endblock %}

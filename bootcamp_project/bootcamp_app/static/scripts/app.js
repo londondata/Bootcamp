@@ -2,6 +2,10 @@ $(document).ready(function(){
 
 console.log('sanity check');
 
+$('#event1-form').on('submit', function(event){
+    event.preventDefault();
+    console.log("you made your decision.")  // sanity check
+    create_post();
 
   $('form').on('submit', function(e){
     e.preventDefault();
