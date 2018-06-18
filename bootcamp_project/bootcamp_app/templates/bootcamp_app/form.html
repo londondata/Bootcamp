@@ -1,10 +1,12 @@
 {% extends 'bootcamp_app/base.html' %}
 
 {% block content %}
-    <h1>New Character</h1>
+    <h1 id="newCharTitle">New Character</h1>
     <form method="POST" class="form">
         {% csrf_token %}
+        <div class="charNameAge"
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Enroll</button>
+        <button type="submit" class="btn btn-primary btn-md btn-red2">Enroll</button>
+        </div
     </form>
 {% endblock %}
