@@ -19,44 +19,21 @@
   Professor Blueslime summarizes Python before lunch, and starts summarizing Django after lunch, as planned. However, as your afternoon break time comes and goes, Professor Blueslime keeps talking. You're hungry, and you're also thirsty. It's hard to concentrate on what he's saying.
 </p>
 <p>
+  You're intimidated by Professor Blueslime, but you also want to take a break. As the clock ticks on, you have to make a decision.
+</p>
+<p>
   Do you choose to interrupt Professor Blueslime so you can take a snack break, or do you choose to skip break to hear Professor Blueslime's test review?
 </p>
 
 <a href="{% url 'choice6' pk=character.id %}">
   <button>
-    Interrupt Professor Blueslime and remind him that we have a break scheduled. I need potato chips and coffee!
+    Summon the courage to interrupt Professor Blueslime and remind him that we have a break scheduled. I need potato chips and coffee!
   </button>
 </a>
-<!-- <form id="choice6" class="game-form">
-  {% csrf_token %}
-  <input type="hidden" name="id" value="{{character.id}}" />
-  <input type="hidden" name="choice" value="6" />
-  <input type="hidden" name="energy" value="10" />
-  <input type="hidden" name="mood" value="10" />
-  <input type="hidden" name="knowledge" value=
-  "5">
-  <button type="submit" id="continue" class="continue-button">
-    Interrupt Professor Blueslime and remind him that we have a break scheduled. I need potato chips and coffee!
-  </button>
-</form>
-{% endif %}
-
-<form id="choice7" class="game-form">
-  {% csrf_token %}
-  <input type="hidden" name="id" value="{{character.id}}" />
-  <input type="hidden" name="choice" value="7" />
-  <input type="hidden" name="energy" value="-10" />
-  <input type="hidden" name="mood" value="-10" />
-  <input type="hidden" name="knowledge" value=
-  "10">
-  <button type="submit" id="continue" class="continue-button">
-    I really want to hear Professor Blueslime review this material even though my stomach's growling.
-  </button>
-</form> -->
 
 <a href="{% url 'choice7' pk=character.id %}">
   <button>
-    I really want to hear Professor Blueslime review this material even though my stomach's growling and I can't concentrate.
+    I really want to hear Professor Blueslime review this material even though my stomach's growling, I'm thirsty, and I can't concentrate.
   </button>
 </a>
 
