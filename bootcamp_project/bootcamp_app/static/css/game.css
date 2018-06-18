@@ -1,18 +1,20 @@
 
 .bgimage {
-	/* background-image: url("../images/BOOTCAMPUI.jpg") */
+	background-image: url("../images/BOOTCAMPUI4.jpg")
 	/* background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; */
-	background-size 1800px 1900px;
+	/* background-size 1025px 878px; */
 	background-repeat: no-repeat;
 	background-position: top;
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 }
 
 .block-content {
-	margin-top: 100px;
-	max-height: 600px;
+	padding: 250px;
+	padding-top: 50px;
+	padding-right: 275px;
+	/* max-height: 600px; */
 }
 
 
