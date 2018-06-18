@@ -6,8 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns =[
 	path('', views.home, name='home'),
-	url(r'^character/update/(?P<pk>[0-9]+)/$', views.UpdateStats.as_view()),
-	# url(r'^character/get/(?P<pk>[0-9]+)/$', views.UpdateStats.as_view()),
 	path('character/new', views.character_create, name="character_create"),
 	path('character/<int:pk>', views.character_detail, name="character_detail"),
 	path('game/day1/<int:pk>', views.day1, name="day1"),

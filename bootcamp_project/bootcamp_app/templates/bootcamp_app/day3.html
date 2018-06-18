@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<h1>Welcome to Day 3</h1>
+
 <h1>Welcome to Day 3, {{character.name}}</h1>
 <p>
    You're a little tired as Professor Blueslime lectures about how Python virtual environments and how Django works as a web application framework. You have some trouble concentrating when you use pip to install Django and some other libraries.
@@ -12,8 +14,8 @@
 </p>
 
 <a href="{% url 'event1' pk=character.id %}">
-  <button>
-    Time to go home!
-  </button>
+	<button>
+		Time to go home!
+	</button>
 </a>
 {% endblock %}
