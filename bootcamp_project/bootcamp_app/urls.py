@@ -40,9 +40,9 @@ urlpatterns =[
 	path('game/finals2/<int:pk>', views.finals2, name="finals2"),
 	path('game/finals2true/<int:pk>', views.finals2true, name="finals2true"),
 	path('game/finals2false/<int:pk>', views.finals2false, name="finals2false"),
-	path('game/finals3/<int:pk>', views.finals3, name="finals3"),
-	path('game/finals3true/<int:pk>', views.finals3true, name="finals3true"),
-	path('game/finals3false/<int:pk>', views.finals3false, name="finals3false"),
-	path('game/finalsoutcome/<int:pk>', views.finalsoutcome, name="finalsoutcome"),
+	# path('game/finals3/<int:pk>', views.finals3, name="finals3"),
+	# path('game/finals3true/<int:pk>', views.finals3true, name="finals3true"),
+	# path('game/finals3false/<int:pk>', views.finals3false, name="finals3false"),
+	# path('game/finalsoutcome/<int:pk>', views.finalsoutcome, name="finalsoutcome"),
 	path('game/destiny/<int:pk>', views.destiny, name="destiny"),
 ]

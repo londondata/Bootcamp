@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootcamp_app',
-    'widget_tweaks',
     'rest_framework',
 ]
 

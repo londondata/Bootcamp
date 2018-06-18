@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load widget_tweaks %}
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +36,6 @@
             Welcome, {{ user.username }}
 						<div class="login-form">
             <a href="{% url 'character_create' %}">Create Character</a>
-						<a href="{% url 'character_create' %}">Sign Up</a>
             <a href="{% url 'logout' %}">Logout</a>
 					</div>
         {% endif %}
@@ -46,7 +44,7 @@
 
 </head>
 <body>
-    <h1> Welcome to BOOTCAMP</h1>
+    <!-- <h1> Welcome to BOOTCAMP</h1>
     <h2>PREPARE TO STUDY</h2>
 
 <nav>
@@ -63,7 +61,7 @@
            <a href="{% url 'character_create' %}">Create Character</a>
            <a href="{% url 'logout' %}">Logout</a>
        {% endif %}
-   </div>
+   </div> -->
 
 
 {% block content %}
