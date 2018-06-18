@@ -6,7 +6,6 @@
 	<title>BOOTCAMP - The Game</title>
 </head>
 <body>
-	<p> This is Bootcamp, {{character.name}}!</p>
 
 {% block content %}
 
@@ -14,11 +13,23 @@
 
 <footer> STATS GO HERE
 	<div class="stat-box">
-		{% for status in character.statuses.stats %}
-			<p>
-				{{ status }}
-			</p>
+	<ul>
+		{% for status in stats %}
+		<li>
+				{{status}}
+		</li>
 		{% endfor %}
+	</ul>
+
+	<p>energy: {{character.energy}}	</p>
+	<p>
+		mood: {{character.mood}}
+	</p>
+	<p>
+		knowledge: {{character.knowledge}}
+	</p>
+
+
 	</div>
 </footer>
 </body>

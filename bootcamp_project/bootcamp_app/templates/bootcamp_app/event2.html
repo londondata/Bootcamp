@@ -1,0 +1,33 @@
+{% extends 'bootcamp_app/game.html' %}
+
+{% block content %}
+  {% if character event2 choice is 3 %}
+    <p>
+      Your superior knowledge of Python and Django fuel your debugging efforts. Due to your intense internet searches and your ability to comprehend what you've found, you are able to pinpoint the problem and get full CRUD working in a couple of hours. You even have a chance to unwind by watching an episode of your favorite TV show before you go to sleep.
+    </p>
+    <p>
+      You gain a lot of knowledge and your mood gets a boost as well!
+    </p>
+  {% endif %}
+
+  {% if character event2 choice is 4 %}
+    <p>
+      Ugh. You spent all night debugging, but nothing worked. You searched through more Stack Overflow posts than you can count and you pored through the Django documentation. Nothing you read made sense. You tried Slacking your classmates, but it was too late when you sent your message, and no one was on. You go to bed without having made any progress.
+    </p>
+    <p>
+      You feel demoralized, and lost a lot of time debugging that you could've spent working on something else.
+    </p>
+    {% endif %}
+
+{% if character event2 choice is 5 %}
+  <p>
+    Well, you couldn't get update working, but you were able to style your HTML with CSS so it didn't look completely hideous. You were so pleased about how your project looked that you were inspired to do more programming. You were even able to implement delete before you went to sleep! So while you weren't able to implement full CRUD, you did have CRD working AND a nice-looking web application.
+  </p>
+  <p>
+    You gained a moderate amount of knowledge from completing the delete feature and working with CSS, but you're also bummed that you weren't able to get update working.
+  </p>
+{% endif %}
+
+<button>Go to sleep, wake up, and go back to BOOTCAMP.</button>
+
+{% endblock %}
