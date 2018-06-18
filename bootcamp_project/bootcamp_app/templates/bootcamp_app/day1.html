@@ -14,20 +14,6 @@
 
 <p>You are upbeat and learn a lot of knowledge for the day, and you go home with a spring in your step.</p>
 
-
-<!-- <div>
-	<form id="day1">
-		{% csrf_token %}
-		<input type="hidden" name="id" value="{{character.id}}" />
-		<input type="hidden" name="energy" value="-5" />
-		<input type="hidden" name="mood" value="-5" />
-		<input type="hidden" name="knowledge" value=
-		"10">
-		<button type="submit" id="continue1" class="continue-button">
-					Go to the next day
-			</button>
-	</form>
-</div> -->
 <a href="{% url 'day2' pk=character.id %}"><button>Your first day was great! Go to day 2.</button></a>
 
 {% endblock %}
