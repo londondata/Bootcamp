@@ -2,28 +2,28 @@
 
 {% block content %}
 <h1>....Later that evening....</h1>
-<p>
-  When you get home from class, your best friend messages you and reminds you that they are moving away forever the very next day.
-</p>
+  <p>
+    When you get home from class, your best friend messages you and reminds you that they are moving away forever the very next day.
+  </p>
 
-<p>
-  You know that if you miss this opportunity to say goodbye,  you will be so sad that you might lose the ability to work as hard. But if you stay in and study, you might do better in school.
-</p>
+  <p>
+    You know that if you miss this opportunity to say goodbye,  you will be so sad that you might lose the ability to work as hard. But if you stay in and study, you might do better in school.
+  </p>
 
-<p>
-  Do you choose to go out for a couple of hours to see your best friend off, or do you stay in and study?
-</p>
+  <p>
+    Do you choose to go out for a couple of hours to see your best friend off, or do you stay in and study?
+  </p>
 
-<a href="{% url 'choice1' pk=character.id %}">
-  <button>
-    I can study later. I'm going out!
-  </button>
-</a>
+  <a href="{% url 'choice1' pk=character.id %}">
+    <button>
+      I can study later. I'm going out!
+    </button>
+  </a>
 
-<a href="{% url 'choice2' pk=character.id %}">
-  <button>
-    I really need to learn Python. I'm staying home and studying.
-  </button>
-</a>
+  <a href="{% url 'choice2' pk=character.id %}">
+    <button>
+      I really need to learn Python. I'm staying home and studying.
+    </button>
+  </a>
 
 {% endblock %}

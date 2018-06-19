@@ -495,8 +495,7 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 			self.mood += int(data['mood'])
 			self.knowledge += int(['knowledge'])
 			serializer.save()
-		#
-		# if request.data:
+		
 			return HttpRedirectResponse(redirect_to ='/day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
