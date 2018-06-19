@@ -260,12 +260,7 @@ def event2(request, pk):
 	return render(request, 'bootcamp_app/event2.html', context)
 
 def day7(request, pk):
-	energy = -5
-	mood = -5
-	knowledge = 5
 	character = Character.objects.get(id=pk)
-	update = character.update_stats(energy, mood, knowledge)
-	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -495,7 +490,7 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 			self.mood += int(data['mood'])
 			self.knowledge += int(['knowledge'])
 			serializer.save()
-		
+
 			return HttpRedirectResponse(redirect_to ='/day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
