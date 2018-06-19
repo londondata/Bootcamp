@@ -148,4 +148,4 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
- django_heroku.settings(locals())
+django_heroku.settings(locals())
