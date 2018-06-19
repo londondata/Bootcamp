@@ -2,14 +2,14 @@
   {% block content %}
     <h1>Welcome to Day 5, {{character.name}}</h1>
 
-    <h4>
+    <h3>
       Can you believe it? You're halfway through BOOTCAMP.
-    </h4>
+    </h3>
     <p>
       Professor Blueslime puts you through your paces this morning by having you work on Django routes and views. It takes you all morning to figure out what goes where, and you take a break for lunch.
     </p>
 
-    <h3>WAT! A POP QUIZ!</h3>
+    <h5>WAT! A POP QUIZ!</h5>
 
     <p>
       Surprise!!
@@ -34,13 +34,13 @@
 
     <a href="{% url 'quiz1true' pk=character.id %}">
       <button id="continue" class="continue-button">
-        True.
+        True
       </button>
     </a>
 
     <a href="{% url 'quiz1false' pk=character.id %}">
       <button id="continue" class="continue-button">
-        False.
+        False
       </button>
     </a>
 

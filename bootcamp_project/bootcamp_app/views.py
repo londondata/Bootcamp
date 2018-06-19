@@ -40,7 +40,12 @@ def character_detail(request, pk):
 
 #GAME DAYS
 def day1(request, pk):
+	energy = 100
+	mood = 100
+	knowledge = 0
 	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -255,12 +260,7 @@ def event2(request, pk):
 	return render(request, 'bootcamp_app/event2.html', context)
 
 def day7(request, pk):
-	energy = -5
-	mood = -5
-	knowledge = 5
 	character = Character.objects.get(id=pk)
-	update = character.update_stats(energy, mood, knowledge)
-	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -454,7 +454,7 @@ def finalsoutcome(request, pk):
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
 	character.knowledge += (character.finals_count * 10)
-	character.is_completed = Trues
+	character.is_completed = True
 	character.save()
 	stats = character.user_stats()
 	context = {
@@ -490,8 +490,7 @@ class UpdateStats(generics.RetrieveUpdateDestroyAPIView):
 			self.mood += int(data['mood'])
 			self.knowledge += int(['knowledge'])
 			serializer.save()
-		#
-		# if request.data:
+
 			return HttpRedirectResponse(redirect_to ='/day2', pk=character.pk)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

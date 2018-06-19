@@ -10,6 +10,7 @@
 	<!-- Google web fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<!-- JavaScripts -->
 	<script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -20,16 +21,19 @@
 	<title>BOOTCAMP - The Game</title>
 </head>
 <body class="bgimage" style="background-image: url('{% static "images/BOOTCAMPUI4.jpg" %}')";>
-<div >
 
-<div class="block-content">
-{% block content %}
+	<div class="centering-container">
+		<div class=block-container>
+			<div class="block-content">
+				{% block content %}
 
-{% endblock%}
-</div>
-</div>
+				{% endblock%}
+			</div>
+		</div>
+	</div>
 
 <footer>
+	<div class="bigstats">
 	<div class="stat-box">
 	<ul>
 		{% for status in stats %}
@@ -38,7 +42,7 @@
 		</li>
 		{% endfor %}
 	</ul>
-
+	</div>
 	</div>
 </footer>
 </body>
