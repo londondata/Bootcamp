@@ -3,7 +3,7 @@ Project 2 - Bootcamp
 
 
 ## About:
-Bootcamp is a text-based adventure game predominantly written in Python. The app has the user play as an aspiring developer attending a ten-day Web Development Immersive program at Grueling Academy. The game follows the developer day-by-day as they make progress toward graduation by facing events that forces them to make challenging decisions which subsequently affects their performance in the program as the game advances.
+Bootcamp is a text-based adventure game predominantly written in Python. The app has the user play as an aspiring developer attending a ten-day Python program at Grueling Academy. The game follows the developer day-by-day as they make progress toward graduation by facing events that forces them to make challenging decisions which subsequently affects their performance in the program as the game advances.
 
 The game is based on the real-life experiences of the Bootcamp app's developers while attending a 12-week long Web Development immersive program at General Assembly in San Francisco. This app, Bootcamp, is a group project that was created during their time at GA.
 
