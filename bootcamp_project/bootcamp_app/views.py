@@ -40,7 +40,12 @@ def character_detail(request, pk):
 
 #GAME DAYS
 def day1(request, pk):
+	energy = 100
+	mood = 100
+	knowledge = 0
 	character = Character.objects.get(id=pk)
+	update = character.update_stats(energy, mood, knowledge)
+	character.save()
 	stats = character.user_stats()
 	context = {
 		'character': character,
@@ -454,7 +459,7 @@ def finalsoutcome(request, pk):
 def destiny(request, pk):
 	character = Character.objects.get(id=pk)
 	character.knowledge += (character.finals_count * 10)
-	character.is_completed = Trues
+	character.is_completed = True
 	character.save()
 	stats = character.user_stats()
 	context = {

@@ -3,14 +3,14 @@
 {% block content %}
 <h1>How did you do on the quiz?</h1>
   {% if character.quiz1 == 'success' %}
-  <h2>You passed!</h2>
+  <h3>You passed!</h3>
     <p>
       Congratulations! You got the question right! You feel smarter about Python, and you gain confidence in your abilities!
     </p>
   {% endif %}
 
   {% if character.quiz1 == 'fail' %}
-  <h2>You failed!</h2>
+  <h3>You failed!</h3>
     <p>
       Ugh! You got the question wrong! You feel sad, and feel like you haven't learned much about Python.
     </p>

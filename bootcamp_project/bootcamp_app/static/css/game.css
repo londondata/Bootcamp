@@ -1,23 +1,86 @@
+h1, h3 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+p, li {
+	font-family: 'Courier New', monospace;
+	font-size: .95em;
+}
+
+h2, h4 {
+	font-size: 2em;
+	font-family: Oswald, sans-serif;
+}
+
+h5 {
+	font-family: 'Courier New', monospace;
+	font-size: 1.5em;
+
+}
 
 .bgimage {
-	background-image: url("../images/BOOTCAMPUI4.jpg")
-	/* background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed; */
-	/* background-size 1025px 878px; */
 	background-repeat: no-repeat;
 	background-position: top;
-	/* background-attachment: fixed; */
+	height: 823px;
+}
+
+.centering-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+.block-container {
+	/* position: relative; */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;s
+	width: 1280;
+	height: 830;
 }
 
 .block-content {
-	padding: 250px;
-	padding-top: 50px;
-	padding-right: 275px;
-	/* max-height: 600px; */
+	width: 775px;
+	height: 510px;
+	padding: 25px;
+	/* position: absolute; */
 }
 
+.bigstats {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	position: absolute;
+	top: 625px;
+}
 
 .stat-box {
-	margin-top: 50px;
+	border: 5px solid black;
+	background-color: white;
+	border radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: absolute;
+	margin: auto;
+	margin-bottom: 25px;
+	padding: 20px;
+	width: 400px;
+}
+
+.ending {
+	display: flex;
+	flex-direction:row;
+	align-items: space-between;
+}
+
+.face {
+	margin-top: 25px;
+}
+
+.outcome {
+	padding-left: 20px;
 }
