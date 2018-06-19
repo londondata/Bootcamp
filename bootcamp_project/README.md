@@ -54,13 +54,10 @@ The app UI uses an actual photograph of the room that the developers primarily w
 - A "Load Character" button for user to continue playing as different characters
 - Show final scores
 - Have a scoreboard that all players access and compare Bootcamp high scores on
-- Rotating questions for the quizes stored in a database
+- Rotating questions for the quizzes stored in a database
 - Make the app mobile responsive
 
 
 ## Contributors:
 
 [Teri](http://www.github.com/teripanda), [June](http://www.github.com/juney3), [Chris](http://www.github.com/chrispykan), [Riki](http://www.github.com/mashwhite)
-
-
-**[Bootcamp hosted in Heroku](http://www.heroku.com/blahblahblahhhhh)**
